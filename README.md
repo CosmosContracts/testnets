@@ -1,5 +1,7 @@
 # Juno Testnets
 
+* [Testnet 1](#testnet-1)
+
 ## Setup
 
 You will need [Starport](https://github.com/tendermint/starport) installed. We'll using SPN to deploy the chain and connect validators. SPN is being actively developed, please, build Starport from source and use `develop` branch.
