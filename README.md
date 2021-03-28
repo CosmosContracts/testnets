@@ -4,7 +4,7 @@
 
 ## Setup
 
-You will need [Starport](https://github.com/tendermint/starport) installed. We'll using SPN to deploy the chain and connect validators. SPN is being actively developed, please, build Starport from source and use `develop` branch.
+You will need [Starport](https://github.com/tendermint/starport) installed. We'll using SPN to deploy the chain and connect validators. [SPN](https://github.com/tendermint/spn) is being actively developed, please, build Starport from source and use `develop` branch.
 
 ### Install and build latest Starport:
 **Prerequisites:** If you want to install Starport locally, make sure to have [Golang >=1.14](https://golang.org/). The latest version of Starport also requires [Protocol Buffer compiler](https://grpc.io/docs/protoc-installation/) to be installed. [Node.js >=12.19.0](https://nodejs.org/) is used to build the welcome screen, block explorer and to run the web scaffold.
@@ -45,6 +45,7 @@ The goal is simply to get the chain started and assess the viability of using SP
 * `chainID`: `juno-testnet-1`
 * `sourceURL`: https://github.com/CosmosContracts/Juno
 * *Start time TBD*
+* *Coordinator TBD*
 
 ### Joining as a validator
 
@@ -60,7 +61,7 @@ By default, a coordinator does not propose themselves as a validator. To do so, 
 
 #### Starting your blockchain node
 
-Once validator proposals have been accepted, run the following command to start a blockchain node:
+Run the following command to start your blockchain node:
 
 ```
 starport network chain start [chainID]
@@ -105,5 +106,6 @@ Replace comma-separated values with a list of `proposalID` being accepted. Repla
 ### Learn more
 
 * [Starport](https://github.com/tendermint/starport)
+* [SPN](https://github.com/tendermint/spn)
 * [Cosmos Network](https://cosmos.network)
 * [Cosmos Community Discord](https://discord.com/invite/W8trcGV) (check out the #starport channel)
