@@ -4,7 +4,7 @@
 
 ## Setup
 
-You will need [Starport](https://github.com/tendermint/starport) installed. We'll using SPN to deploy the chain and connect validators. [SPN](https://github.com/tendermint/spn) is being actively developed, please, build Starport from source and use `develop` branch.
+You will need [Starport](https://github.com/tendermint/starport) installed. We'll be using SPN to deploy the chain and connect validators. [SPN](https://github.com/tendermint/spn) is being actively developed, please, build Starport from source and use the latest `develop` branch.
 
 ### Install and build latest Starport:
 **Prerequisites:** If you want to install Starport locally, make sure to have [Golang >=1.14](https://golang.org/). The latest version of Starport also requires [Protocol Buffer compiler](https://grpc.io/docs/protoc-installation/) to be installed. [Node.js >=12.19.0](https://nodejs.org/) is used to build the welcome screen, block explorer and to run the web scaffold.
@@ -17,7 +17,8 @@ If you have installed Git LFS after cloning Starport, checkout to your preferred
 
 ```sh
 git clone https://github.com/tendermint/starport --depth=1
-cd starport && make
+cd starport && git checkout develop
+make
 ```
 
 This will build and install `starport` binary into `$GOBIN`.
