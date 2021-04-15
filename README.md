@@ -67,7 +67,7 @@ Run the following command from a server to propose yourself as a validator:
 starport network chain join [chainID] --nightly
 ```
 
-Follow the prompts to provide information about the validator. Starport will download the source code of the blockchain node, build, initialize and create and send two proposals to SPN: to add an account and to add a validator with self-delegation. By running a `join` command you act as a "validator". When filling out the required parameters ensure to include the **'stake'** word after the required values for the inputs to be accepted.
+Follow the prompts to provide information about the validator. Starport will download the source code of the blockchain node, build, initialize and create and send two proposals to SPN: to add an account and to add a validator with self-delegation. By running a `join` command you act as a "validator". When filling out the required parameters ensure to include the **'stake'** word after the required values for the inputs to be accepted. If the terminal gets an error or hangs then you can also try: `starport network chain join [chainID] --nightly --keyring-backend "test"`
 
 By default, a coordinator does not propose themselves as a validator. To do so, run `join` command and your proposals will be automatically approved.
 
