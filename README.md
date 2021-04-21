@@ -16,6 +16,15 @@ Starport uses [Git LFS](https://git-lfs.github.com/). **Please make sure that it
 
 If you have installed Git LFS after cloning Starport, checkout to your preferred branch to trigger a pull for large files or run `git lfs pull`.
 
+You need to ensure your gopath configuration is correct. If the following **'make'** step does not work then you might have to add these lines to your .profile or .zshrc in the users home folder:
+```
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export GO111MODULE=on
+export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
+```
+
+
 ```sh
 git clone https://github.com/tendermint/starport --depth=1
 cd starport && git checkout develop
@@ -58,7 +67,7 @@ Run the following command from a server to propose yourself as a validator:
 starport network chain join [chainID] --nightly
 ```
 
-Follow the prompts to provide information about the validator. Starport will download the source code of the blockchain node, build, initialize and create and send two proposals to SPN: to add an account and to add a validator with self-delegation. By running a `join` command you act as a "validator".
+Follow the prompts to provide information about the validator. Starport will download the source code of the blockchain node, build, initialize and create and send two proposals to SPN: to add an account and to add a validator with self-delegation. By running a `join` command you act as a "validator". When filling out the required parameters ensure to include the **'stake'** word after the required values for the inputs to be accepted. If the terminal gets an error or hangs then you can also try: `starport network chain join [chainID] --nightly --keyring-backend "test"`
 
 By default, a coordinator does not propose themselves as a validator. To do so, run `join` command and your proposals will be automatically approved.
 
