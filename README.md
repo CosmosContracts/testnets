@@ -8,7 +8,7 @@ You will need [Starport](https://github.com/tendermint/starport) installed. We'l
 
 ### Install and build latest Starport:
 
-**Prerequisites:** If you want to install Starport locally, make sure to have [Golang >=1.14](https://golang.org/). The latest version of Starport also requires [Protocol Buffer compiler](https://grpc.io/docs/protoc-installation/) to be installed. [Node.js >=12.19.0](https://nodejs.org/) is used to build the welcome screen, block explorer and to run the web scaffold.
+**Prerequisites:** If you want to install Starport locally, make sure to have [Golang >=1.16](https://golang.org/). The latest version of Starport also requires [Protocol Buffer compiler](https://grpc.io/docs/protoc-installation/) to be installed. [Node.js >=12.19.0](https://nodejs.org/) is used to build the welcome screen, block explorer and to run the web scaffold.
 
 #### Build from source
 
@@ -17,7 +17,7 @@ Starport uses [Git LFS](https://git-lfs.github.com/). **Please make sure that it
 If you have installed Git LFS after cloning Starport, checkout to your preferred branch to trigger a pull for large files or run `git lfs pull`.
 
 ```sh
-git clone https://github.com/tendermint/starport --depth=1
+git clone https://github.com/tendermint/starport
 cd starport && git checkout develop
 make
 ```
@@ -45,12 +45,12 @@ The goal is simply to get the chain started and assess the viability of using SP
 
 ### Parameters
 
-- `chainID`: `juno-testnet-1`
-- `sourceURL`: https://github.com/CosmosContracts/Juno
-- _Start time TBD_
-- _Coordinator TBD_
+- `chainID`: `juno-testnet-3`
+- _Start time: April 25th, 16:00UTC_
 
 ### Joining as a validator
+
+**IMPORTANT: Be sure to run the following on the machine you'll use for the testnet.**
 
 Run the following command from a server to propose yourself as a validator:
 
@@ -60,7 +60,7 @@ starport network chain join [chainID] --nightly
 
 Follow the prompts to provide information about the validator. Starport will download the source code of the blockchain node, build, initialize and create and send two proposals to SPN: to add an account and to add a validator with self-delegation. By running a `join` command you act as a "validator".
 
-By default, a coordinator does not propose themselves as a validator. To do so, run `join` command and your proposals will be automatically approved.
+Be sure to write down your seed phrase, you'll need to add your key to junod to interact with the chain.
 
 #### Starting your blockchain node
 
@@ -71,6 +71,53 @@ starport network chain start [chainID] --nightly
 ```
 
 This command will use SPN to create a correct genesis file, configure and launch your blockchain node. Once the node is started and the required number of validators are online, you will see output with incrementing block height number, which means that the blockchain has been successfully started.
+
+#### Running in production
+
+Create a systemd file for your Juno service:
+
+```sh
+sudo vi /etc/systemd/system/junod.service
+```
+
+Copy and paste the following and update `<YOUR_USERNAME>`, `<GO_WORKSPACE>`, and `<CHAIN_ID>`:
+
+```sh
+Description=Juno daemon
+After=network-online.target
+
+[Service]
+User=root
+ExecStart=/home/<YOUR_USERNAME>/<GO_WORKSPACE>/go/bin/junod start --p2p.laddr tcp://0.0.0.0:26656 --home /home/<YOUR_USERNAME>/.spn-chain-homes/<CHAIN_ID>
+Restart=on-failure
+RestartSec=3
+LimitNOFILE=4096
+
+[Install]
+WantedBy=multi-user.target
+```
+
+2
+**This assumes `$HOME/go_workspace` to be your Go workspace. Your actual workspace directory may vary.**
+
+Enable and start the new service:
+
+```sh
+sudo systemctl enable junod
+sudo systemctl start junod
+```
+
+Check status:
+
+```sh
+junod status
+```
+
+Check logs:
+
+```sh
+journalctl -u junod -f
+```
 
 ### Learn more
 
