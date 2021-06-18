@@ -17,13 +17,13 @@ Starport uses [Git LFS](https://git-lfs.github.com/). **Please make sure that it
 If you have installed Git LFS after cloning Starport, checkout to your preferred branch to trigger a pull for large files or run `git lfs pull`.
 
 You need to ensure your gopath configuration is correct. If the following **'make'** step does not work then you might have to add these lines to your .profile or .zshrc in the users home folder:
+
 ```
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export GO111MODULE=on
 export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
 ```
-
 
 ```sh
 git clone https://github.com/tendermint/starport
@@ -54,8 +54,9 @@ The goal is simply to get the chain started and assess the viability of using SP
 
 ### Parameters
 
-- `chainID`: `juno-testnet-3`
-- _Start time: April 25th, 16:00UTC_
+- `chainID`: `juno-testnet-7`
+- _Start time: TBD_
+- **Genesis file: [juno-testnet-7](https://github.com/CosmosContracts/testnets/blob/main/juno-testnet-7/genesis.json)**
 
 ### Joining as a validator
 
