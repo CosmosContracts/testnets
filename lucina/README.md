@@ -99,7 +99,7 @@ Below are the instructions to generate & submit your genesis transaction
    If all goes well, you will see a message similar to the following:
 
    ```sh
-   Genesis transaction written to "/home/user/.junod/config/gentx/gentx-******.json"
+   Genesis transaction written to "/home/user/.juno/config/gentx/gentx-******.json"
    ```
 
 ### Submit genesis transaction
@@ -116,7 +116,7 @@ Below are the instructions to generate & submit your genesis transaction
 
   ```sh
   > cd testnets
-  > cp ~/.junod/config/gentx/gentx*.json ./lucina/gentx/
+  > cp ~/.juno/config/gentx/gentx*.json ./lucina/gentx/
   ```
 
 - Commit and push to your repo
@@ -125,7 +125,7 @@ Below are the instructions to generate & submit your genesis transaction
 
 #### Running in production
 
-Download Genesis file when the time is right. Put it in your `/home/user/.junod` folder.
+Download Genesis file when the time is right. Put it in your `/home/user/.juno` folder.
 
 Create a systemd file for your Juno service:
 
@@ -141,7 +141,7 @@ After=network-online.target
 
 [Service]
 User=root
-ExecStart=/home/<YOUR_USERNAME>/<GO_WORKSPACE>/go/bin/junod start --p2p.laddr tcp://0.0.0.0:26656 --home /home/<YOUR_USERNAME>/.spn-chain-homes/<CHAIN_ID>
+ExecStart=/home/<YOUR_USERNAME>/<GO_WORKSPACE>/go/bin/junod start --p2p.laddr tcp://0.0.0.0:26656 --home /home/<YOUR_USERNAME>/.juno
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=4096
@@ -151,7 +151,7 @@ WantedBy=multi-user.target
 ```
 
 2
-**This assumes `$HOME/go_workspace` to be your Go workspace. Your actual workspace directory may vary.**
+**This assumes `$HOME/go_workspace` to be your Go workspace, and `$HOME/.juno` to be your directory for config and data. Your actual directory locations may vary.**
 
 Enable and start the new service:
 
