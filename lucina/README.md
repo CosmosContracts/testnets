@@ -1,5 +1,7 @@
 # Juno Lucina Testnet
 
+_Planned Start Time: June 23rd, 16:00 UTC_
+
 **This testnet will not be incentivized.**
 
 If you're interested in earning Juno, checkout [Hack Juno](https://github.com/CosmosContracts/hack-juno).
@@ -61,10 +63,6 @@ starport build
 The first testnet will test using SPN to deploy the chain and connect validators.
 
 The goal is simply to get the chain started and assess the viability of using SPN.
-
-### Parameters
-
-- _Start time: TBD_
 
 ## Setup validator node
 
