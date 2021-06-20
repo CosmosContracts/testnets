@@ -1,3 +1,7 @@
+# Starport testing
+
+You can use Starport to easily spin up new instances of Juno for quick testing.
+
 ## Coordinator instructions
 
 **NOTE: these steps should be done only by the testnet coordinator, if you're a validator skip these steps.**
@@ -31,6 +35,32 @@ starport network proposal approve [chainID] 1,4,5,6 --nightly
 ```
 
 Replace comma-separated values with a list of `proposalID` being accepted. Replace `approve` with `reject` to reject proposals instead.
+
+### Joining as a validator
+
+**IMPORTANT: Be sure to run the following on the machine you'll use for the testnet.**
+
+Run the following command from a server to propose yourself as a validator:
+
+```
+starport network chain join [chainID] --nightly
+```
+
+Follow the prompts to provide information about the validator. Starport will download the source code of the blockchain node, build, initialize, and send two proposals to SPN: to add an account and to add a validator with self-delegation. By running a `join` command you act as a "validator". When filling out the required parameters ensure to include the **'stake'** word after the required values for the inputs to be accepted. If the terminal gets an error or hangs then you can also try: `starport network chain join [chainID] --nightly --keyring-backend "test"`
+
+Be sure to write down your seed phrase, you'll need to add your key to junod to interact with the chain.
+
+#### Starting your blockchain node
+
+Run the following command to start your blockchain node:
+
+```
+starport network chain start [chainID] --nightly
+```
+
+This command will use SPN to create a correct genesis file, configure and launch your blockchain node. Once the node is started and the required number of validators are online, you will see output with incrementing block height number, which means that the blockchain has been successfully started.
+
+NOTE: Make sure `build_tags` includes "faucet", which is required for testnet.
 
 ### Learn more
 
