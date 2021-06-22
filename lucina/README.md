@@ -73,8 +73,8 @@ Below are the instructions to generate & submit your genesis transaction
 1. Initialize the Juno directories and create the local genesis file with the correct
    chain-id
 
-   ```sh
-   > junod init <moniker-name> --chain-id=lucina
+   ```bash
+   junod init <moniker-name> --chain-id=lucina
    ```
 
 2. Create a local key pair
@@ -86,19 +86,19 @@ Below are the instructions to generate & submit your genesis transaction
 3. Add your account to your local genesis file with a given amount and the key you
    just created. Use only `100000000ujuno`, other amounts will be ignored.
 
-   ```sh
-   > junod add-genesis-account $(junod keys show <key-name> -a) 100000000ujuno
+   ```bash
+   junod add-genesis-account $(junod keys show <key-name> -a) 100000000ujuno
    ```
 
 4. Create the gentx
 
-   ```sh
-   > junod gentx <key-name> 90000000ujuno --chain-id=lucina
+   ```bash
+   junod gentx <key-name> 90000000ujuno --chain-id=lucina
    ```
 
    If all goes well, you will see a message similar to the following:
 
-   ```sh
+   ```bash
    Genesis transaction written to "/home/user/.juno/config/gentx/gentx-******.json"
    ```
 
@@ -108,8 +108,8 @@ Below are the instructions to generate & submit your genesis transaction
 
 - Clone your repo using
 
-  ```sh
-  > git clone https://github.com/<your-github-username>/testnets
+  ```bash
+  git clone https://github.com/<your-github-username>/testnets
   ```
 
 - Copy the generated gentx json file to `<repo_path>/lucina/gentx/`
