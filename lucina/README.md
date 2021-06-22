@@ -51,14 +51,14 @@ Be sure to use the latest version.
 ```sh
 git clone https://github.com/CosmosContracts/Juno
 cd Juno
-starport build
+starport chain build
 ```
 
 ### Minimum hardware requirements
 
 - 2GB RAM
 - 25GB of disk space
-- 1.4 GHz CPU
+- 1.4 GHz amd64 CPU
 
 The first testnet will test using SPN to deploy the chain and connect validators.
 
