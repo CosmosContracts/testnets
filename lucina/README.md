@@ -74,7 +74,7 @@ Below are the instructions to generate & submit your genesis transaction
 
    ```bash
    junod init <moniker-name> --chain-id=lucina
-   wget -O ~/juno/config/genesis.json https://github.com/CosmosContracts/testnets/raw/main/lucina/genesis.json 
+   wget -O ~/.juno/config/genesis.json https://github.com/CosmosContracts/testnets/raw/main/lucina/genesis.json 
    ```
 
 2. Create a local key pair
