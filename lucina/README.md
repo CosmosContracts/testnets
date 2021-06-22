@@ -70,18 +70,18 @@ Below are the instructions to generate & submit your genesis transaction
 
 ### Generate genesis transaction (gentx)
 
-1. Initialize the Juno directories and create the local genesis file with the correct
-   chain-id
+1. Initialize the Juno directories and download the genesis.json file
 
    ```bash
    junod init <moniker-name> --chain-id=lucina
+   wget -O ~/juno/config/genesis.json https://github.com/CosmosContracts/testnets/raw/main/lucina/genesis.json 
    ```
 
 2. Create a local key pair
 
-   ```sh
-   > junod keys add <key-name>
-   ```
+```bash
+junod keys add <key-name>
+```
 
 3. Add your account to your local genesis file with a given amount and the key you
    just created. Use only `100000000ujuno`, other amounts will be ignored.
