@@ -1,5 +1,8 @@
 # Juno Lucina Testnet
 
+![JUNO Testnet](https://user-images.githubusercontent.com/79812965/125953860-198a5b20-c261-4a4d-8c7b-7fd9fe747905.png)
+
+
 _Planned Start Time: June 23rd, 16:00 UTC_
 
 **This testnet will not be incentivized.**
