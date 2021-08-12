@@ -1,6 +1,7 @@
 # Juno Lucina Testnet
 
-![JUNO Testnet](https://user-images.githubusercontent.com/79812965/125953860-198a5b20-c261-4a4d-8c7b-7fd9fe747905.png)
+![JUNOVERSE 4](https://user-images.githubusercontent.com/79812965/129277669-faab8dce-ce6c-48ec-b2cb-b3b3cbc23884.png)
+
 
 
 _Planned Start Time: June 23rd, 16:00 UTC_
