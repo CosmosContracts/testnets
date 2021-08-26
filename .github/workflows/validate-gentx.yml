@@ -14,4 +14,4 @@ jobs:
         run: go version
       - name: validate-gentx
         run: |
-          bash -x ./hera/scripts/validate-gentx.sh
+          bash -x ./scripts/validate-gentx.sh
