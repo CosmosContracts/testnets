@@ -3,7 +3,7 @@ JUNOD_HOME="/tmp/junod$(date +%s)"
 RANDOM_KEY="randomjunodvalidatorkey"
 CHAIN_ID=hera
 DENOM=ujuno
-MAXBOND=50000000000 # 50000JUNO
+MAXBOND=90000000 # 90JUNO
 
 GENTX_FILE=$(find ./$CHAIN_ID/gentxs -iname "*.json")
 LEN_GENTX=$(echo ${#GENTX_FILE})
@@ -86,7 +86,7 @@ else
         exit 1
     fi
 
-    ./build/junod add-genesis-account $RANDOM_KEY 100000000000000$DENOM --home $JUNOD_HOME \
+    ./build/junod add-genesis-account $RANDOM_KEY 100000000$DENOM --home $JUNOD_HOME \
         --keyring-backend test
 
     ./build/junod gentx $RANDOM_KEY 90000000000000$DENOM --home $JUNOD_HOME \
