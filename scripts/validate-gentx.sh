@@ -2,8 +2,8 @@
 JUNOD_HOME="/tmp/junod$(date +%s)"
 RANDOM_KEY="randomjunodvalidatorkey"
 CHAIN_ID=hera
-DENOM=ujunox
-MAXBOND=50000000000 # 50000JUNOX
+DENOM=ujuno
+MAXBOND=50000000000 # 50000JUNO
 
 GENTX_FILE=$(find ./$CHAIN_ID/gentxs -iname "*.json")
 LEN_GENTX=$(echo ${#GENTX_FILE})
