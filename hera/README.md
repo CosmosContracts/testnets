@@ -4,7 +4,7 @@
 
 
 
-_Planned Start Time: September 2nd, 16:00 UTC_
+_Planned Start Time: TBD_
 
 **This testnet will not be incentivized.**
 
@@ -12,17 +12,10 @@ If you're interested in earning Juno, checkout [Hack Juno](https://github.com/Co
 
 ## Setup
 
-You will need [Starport](https://github.com/tendermint/starport) installed. We'll be using SPN to deploy the chain and connect validators. [SPN](https://github.com/tendermint/spn) is being actively developed, please, build Starport from source and use the latest `develop` branch.
-
-### Install and build latest Starport:
-
-**Prerequisites:** If you want to install Starport locally, make sure to have [Golang >=1.16](https://golang.org/). The latest version of Starport also requires [Protocol Buffer compiler](https://grpc.io/docs/protoc-installation/) to be installed. [Node.js >=12.19.0](https://nodejs.org/) is used to build the welcome screen, block explorer and to run the web scaffold.
+**Prerequisites:** Make sure to have [Golang >=1.16](https://golang.org/).
 
 #### Build from source
 
-Starport uses [Git LFS](https://git-lfs.github.com/). **Please make sure that it is installed before cloning Starport.**
-
-If you have installed Git LFS after cloning Starport, checkout to your preferred branch to trigger a pull for large files or run `git lfs pull`.
 
 You need to ensure your gopath configuration is correct. If the following **'make'** step does not work then you might have to add these lines to your .profile or .zshrc in the users home folder:
 
@@ -34,28 +27,17 @@ export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
 ```
 
 ```sh
-git clone https://github.com/tendermint/starport
-cd starport && git checkout develop
-make
+git clone https://github.com/CosmosContracts/Juno
+make build && make install
 ```
 
-This will build and install `starport` binary into `$GOBIN`.
+This will build and install `junod` binary into `$GOBIN`.
 
 Note: When building from source, it is important to have your `$GOPATH` set correctly. When in doubt, the following should do:
 
 ```sh
 mkdir ~/go
 export GOPATH=~/go
-```
-
-##### Building Juno
-
-Be sure to use the latest version.
-
-```sh
-git clone https://github.com/CosmosContracts/Juno
-cd Juno
-starport chain build
 ```
 
 ### Minimum hardware requirements
@@ -78,7 +60,7 @@ Below are the instructions to generate & submit your genesis transaction
    chain-id
 
    ```bash
-   junod init <moniker-name> --chain-id=lucina
+   junod init <moniker-name> --chain-id=hera
    ```
 
 2. Create a local key pair
@@ -97,7 +79,7 @@ Below are the instructions to generate & submit your genesis transaction
 4. Create the gentx
 
    ```bash
-   junod gentx <key-name> 90000000ujuno --chain-id=lucina
+   junod gentx <key-name> 90000000ujuno --chain-id=hera
    ```
 
    If all goes well, you will see a message similar to the following:
@@ -116,11 +98,11 @@ Below are the instructions to generate & submit your genesis transaction
   git clone https://github.com/<your-github-username>/testnets
   ```
 
-- Copy the generated gentx json file to `<repo_path>/lucina/gentx/`
+- Copy the generated gentx json file to `<repo_path>/hera/gentx/`
 
   ```sh
   > cd testnets
-  > cp ~/.juno/config/gentx/gentx*.json ./lucina/gentx/
+  > cp ~/.juno/config/gentx/gentx*.json ./hera/gentx/
   ```
 
 - Commit and push to your repo
