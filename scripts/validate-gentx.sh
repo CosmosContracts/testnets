@@ -9,12 +9,12 @@ GENTX_FILE=$(find ./$CHAIN_ID/gentxs -iname "*.json")
 LEN_GENTX=$(echo ${#GENTX_FILE})
 
 # Gentx Start date
-start="2021-08-26 01:00:00Z"
+start="2021-09-01 01:00:00Z"
 # Compute the seconds since epoch for start date
 stTime=$(date --date="$start" +%s)
 
 # Gentx End date
-end="2021-09-01 10:00:00Z"
+end="2021-09-08 10:00:00Z"
 # Compute the seconds since epoch for end date
 endTime=$(date --date="$end" +%s)
 
