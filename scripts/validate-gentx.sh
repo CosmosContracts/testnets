@@ -3,7 +3,7 @@ JUNOD_HOME="/tmp/junod$(date +%s)"
 RANDOM_KEY="randomjunodvalidatorkey"
 CHAIN_ID=hera
 DENOM=ujuno
-MAXBOND=90000000 # 90JUNO
+# MAXBOND=90000000 # 90JUNO
 
 GENTX_FILE=$(find ./$CHAIN_ID/gentxs -iname "*.json")
 LEN_GENTX=$(echo ${#GENTX_FILE})
@@ -60,7 +60,7 @@ else
 
     echo "..........Fetching genesis......."
     rm -rf $JUNOD_HOME/config/genesis.json
-    curl -s https://raw.githubusercontent.com/CosmosContracts/testnets/$CHAIN_ID/genesis-prelaunch.json >$JUNOD_HOME/config/genesis.json
+    curl -s https://raw.githubusercontent.com/CosmosContracts/testnets/$CHAIN_ID/pre-genesis.json >$JUNOD_HOME/config/genesis.json
 
     # this genesis time is different from original genesis time, just for validating gentx.
     sed -i '/genesis_time/c\   \"genesis_time\" : \"2021-09-02T16:00:00Z\",' $JUNOD_HOME/config/genesis.json
@@ -79,12 +79,11 @@ else
         exit 1
     fi
 
-    # limit the amount that can be bonded
-
-    if [ $amountquery -gt $MAXBOND ]; then
-        echo "bonded too much: $amountquery > $MAXBOND"
-        exit 1
-    fi
+    # # limit the amount that can be bonded?
+    # if [ $amountquery -gt $MAXBOND ]; then
+    #     echo "bonded too much: $amountquery > $MAXBOND"
+    #     exit 1
+    # fi
 
     ./build/junod add-genesis-account $RANDOM_KEY 100000000$DENOM --home $JUNOD_HOME \
         --keyring-backend test
