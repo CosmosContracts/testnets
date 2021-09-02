@@ -2,8 +2,6 @@
 
 ![JUNOVERSE 4](https://user-images.githubusercontent.com/79812965/129277669-faab8dce-ce6c-48ec-b2cb-b3b3cbc23884.png)
 
-
-
 _Planned Start Time: TBD_
 
 **This testnet will not be incentivized.**
@@ -15,7 +13,6 @@ If you're interested in earning Juno, checkout [Hack Juno](https://github.com/Co
 **Prerequisites:** Make sure to have [Golang >=1.16](https://golang.org/).
 
 #### Build from source
-
 
 You need to ensure your gopath configuration is correct. If the following **'make'** step does not work then you might have to add these lines to your .profile or .zshrc in the users home folder:
 
@@ -56,6 +53,8 @@ Below are the instructions to generate & submit your genesis transaction
 
 ### Generate genesis transaction (gentx)
 
+This testnet is a simulation of Juno mainnet. Similar to Osmosis, only nodes that received the airdrop will be able to validate. Others will be able to join the validator set at a later date.
+
 1. Initialize the Juno directories and create the local genesis file with the correct
    chain-id
 
@@ -63,23 +62,18 @@ Below are the instructions to generate & submit your genesis transaction
    junod init <moniker-name> --chain-id=hera
    ```
 
-2. Create a local key pair
+2. Create a local key pair (you should use the same key associated with you airdropped account)
 
    ```sh
    > junod keys add <key-name>
    ```
 
-3. Add your account to your local genesis file with a given amount and the key you
-   just created. Use only `100000000ujuno`, other amounts will be ignored.
-
-   ```bash
-   junod add-genesis-account $(junod keys show <key-name> -a) 100000000ujuno
-   ```
+3. Find you're account in the `hera/pre-genesis.json` file. The balance of you airdrop is what you'll be able to use with your validator.
 
 4. Create the gentx
 
    ```bash
-   junod gentx <key-name> 90000000ujuno --chain-id=hera
+   junod gentx <key-name> <balance>ujuno --chain-id=hera
    ```
 
    If all goes well, you will see a message similar to the following:
@@ -110,6 +104,8 @@ Below are the instructions to generate & submit your genesis transaction
 - Only PRs from individuals / groups with a history successfully running nodes will be accepted. This is to ensure the network successfully starts on time.
 
 #### Running in production
+
+**Note, we'll be going through some upgrades soon after Juno mainnet. Consider using [Cosmovisor](https://github.com/cosmos/cosmos-sdk/tree/master/cosmovisor) to make your life easier.**
 
 Download Genesis file when the time is right. Put it in your `/home/user/.juno` folder.
 
