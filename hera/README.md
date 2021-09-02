@@ -10,7 +10,7 @@ If you're interested in earning Juno, checkout [Hack Juno](https://github.com/Co
 
 ## Setup
 
-**Prerequisites:** Make sure to have [Golang >=1.16](https://golang.org/).
+**Prerequisites:** Make sure to have [Golang >=1.17](https://golang.org/).
 
 #### Build from source
 
@@ -42,10 +42,6 @@ export GOPATH=~/go
 - 2GB RAM
 - 25GB of disk space
 - 1.4 GHz amd64 CPU
-
-The first testnet will test using SPN to deploy the chain and connect validators.
-
-The goal is simply to get the chain started and assess the viability of using SPN.
 
 ## Setup validator node
 
