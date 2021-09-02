@@ -52,11 +52,11 @@ else
     cd Juno
     git checkout hera
     make build
-    chmod +x ./build/junod
+    chmod +x ./bin/junod
 
-    ./build/junod keys add $RANDOM_KEY --keyring-backend test --home $JUNOD_HOME
+    ./bin/junod keys add $RANDOM_KEY --keyring-backend test --home $JUNOD_HOME
 
-    ./build/junod init --chain-id $CHAIN_ID validator --home $JUNOD_HOME
+    ./bin/junod init --chain-id $CHAIN_ID validator --home $JUNOD_HOME
 
     echo "..........Fetching genesis......."
     rm -rf $JUNOD_HOME/config/genesis.json
@@ -85,28 +85,28 @@ else
     #     exit 1
     # fi
 
-    ./build/junod add-genesis-account $RANDOM_KEY 100000000$DENOM --home $JUNOD_HOME \
+    ./bin/junod add-genesis-account $RANDOM_KEY 100000000$DENOM --home $JUNOD_HOME \
         --keyring-backend test
 
-    ./build/junod gentx $RANDOM_KEY 90000000000000$DENOM --home $JUNOD_HOME \
+    ./bin/junod gentx $RANDOM_KEY 90000000000000$DENOM --home $JUNOD_HOME \
         --keyring-backend test --chain-id $CHAIN_ID
 
     cp ../$GENTX_FILE $JUNOD_HOME/config/gentx/
 
     echo "..........Collecting gentxs......."
-    ./build/junod collect-gentxs --home $JUNOD_HOME
+    ./bin/junod collect-gentxs --home $JUNOD_HOME
     sed -i '/persistent_peers =/c\persistent_peers = ""' $JUNOD_HOME/config/config.toml
 
-    ./build/junod validate-genesis --home $JUNOD_HOME
+    ./bin/junod validate-genesis --home $JUNOD_HOME
 
     echo "..........Starting node......."
-    ./build/junod start --home $JUNOD_HOME &
+    ./bin/junod start --home $JUNOD_HOME &
 
     sleep 5s
 
     echo "...checking network status.."
 
-    ./build/junod status --node http://localhost:26657
+    ./bin/junod status --node http://localhost:26657
 
     echo "...Cleaning the stuff..."
     killall junod >/dev/null 2>&1
