@@ -1,6 +1,8 @@
 # Junø - Hera Testnet
 
-![JUNOVERSE 4](https://user-images.githubusercontent.com/79812965/129277669-faab8dce-ce6c-48ec-b2cb-b3b3cbc23884.png)
+![HERA (Testnet) 2](https://user-images.githubusercontent.com/79812965/131985200-9bc33b36-264a-48c5-84b2-38f6614406f0.png)
+
+
 
 _Planned Start Time: TBD_
 
