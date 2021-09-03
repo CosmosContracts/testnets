@@ -92,6 +92,7 @@ else
     echo "..........Collecting gentxs......."
     ./bin/junod collect-gentxs --home $JUNOD_HOME
     sed -i '/persistent_peers =/c\persistent_peers = ""' $JUNOD_HOME/config/config.toml
+    sed -i '/minimum-gas-prices =/c\minimum-gas-prices = "0.25ujuno"' $JUNOD_HOME/config/app.toml
 
     ./bin/junod validate-genesis --home $JUNOD_HOME
 
