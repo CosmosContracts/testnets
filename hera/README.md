@@ -64,9 +64,17 @@ This testnet is a simulation of Juno mainnet. Similar to Osmosis, only nodes tha
    > junod keys add <key-name>
    ```
 
-3. Find you're account in the `hera/pre-genesis.json` file. The balance of you airdrop is what you'll be able to use with your validator.
+   Note: since this testnet involves using the same Cosmos Hub key that you received your airdrop with, you may wish to use an offline key. Do this with `junod keys add <key-name> --pubkey <your-pubkey>`. For the rest of the transactions, you will use the `--generate-only` flag and sign them offline with `junod tx sign`.
 
-4. Create the gentx
+3. Download the pre-genesis file:
+
+   ```sh
+   curl -s  https://raw.githubusercontent.com/CosmosContracts/testnets/main/hera/pre-genesis.json >~/.juno/config/genesis.json
+   ```
+
+   Find your account in the `hera/pre-genesis.json` file. The balance of your airdrop is what you'll be able to use with your validator.
+
+4. Create the gentx:
 
    ```bash
    junod gentx <key-name> <balance>ujuno --chain-id=hera
