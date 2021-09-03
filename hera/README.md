@@ -4,7 +4,7 @@
 
 
 
-_Planned Start Time: TBD_
+_Planned Start Time: September 8th at 4 PM UTC.
 
 **This testnet will not be incentivized.**
 
