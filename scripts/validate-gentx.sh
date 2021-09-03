@@ -91,6 +91,7 @@ else
     # ./bin/junod gentx $RANDOM_KEY 90000000000000$DENOM --home $JUNOD_HOME \
     #     --keyring-backend test --chain-id $CHAIN_ID
 
+    mkdir -p $JUNOD_HOME/config/gentx/
     cp ../$GENTX_FILE $JUNOD_HOME/config/gentx/
 
     echo "..........Collecting gentxs......."
