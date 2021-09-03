@@ -90,7 +90,7 @@ else
     cp ../$GENTX_FILE $JUNOD_HOME/config/gentx/
 
     echo "..........Collecting gentxs......."
-    ./bin/junod collect-gentxs --home $JUNOD_HOME
+    ./bin/junod collect-gentxs --home $JUNOD_HOME &> logs.txt
     sed -i '/persistent_peers =/c\persistent_peers = ""' $JUNOD_HOME/config/config.toml
     sed -i '/minimum-gas-prices =/c\minimum-gas-prices = "0.25ujuno"' $JUNOD_HOME/config/app.toml
 
