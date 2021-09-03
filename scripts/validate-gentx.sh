@@ -68,7 +68,7 @@ else
 
     find ../$CHAIN_ID/gentx -iname "*.json" -print0 |
         while IFS= read -r -d '' line; do
-            GENACC=$(cat ../$line | sed -n 's|.*"delegator_address":"\([^"]*\)".*|\1|p')
+            GENACC=$(cat $line | sed -n 's|.*"delegator_address":"\([^"]*\)".*|\1|p')
             denomquery=$(jq -r '.body.messages[0].value.denom' $line)
             amountquery=$(jq -r '.body.messages[0].value.amount' $line)
 
