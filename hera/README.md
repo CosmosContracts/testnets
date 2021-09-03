@@ -2,9 +2,9 @@
 
 ![HERA (Testnet) 2](https://user-images.githubusercontent.com/79812965/131985200-9bc33b36-264a-48c5-84b2-38f6614406f0.png)
 
+_Planned Start Time: September 8th at 4 PM UTC._
 
-
-_Planned Start Time: September 8th at 4 PM UTC.
+Please have your gentx submitted by Tuesday, September 7th, 10pm UTC if you wish to participate.
 
 **This testnet will not be incentivized.**
 
