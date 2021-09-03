@@ -99,7 +99,7 @@ else
     echo "..........Starting node......."
     ./bin/junod start --home $JUNOD_HOME &
 
-    sleep 5s
+    sleep 90s
 
     echo "...checking network status.."
 
