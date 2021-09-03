@@ -5,7 +5,7 @@ CHAIN_ID=hera
 DENOM=ujuno
 # MAXBOND=90000000 # 90JUNO
 
-GENTX_FILE=$(find ./$CHAIN_ID/gentxs -iname "*.json")
+GENTX_FILE=$(find ./$CHAIN_ID/gentx -iname "*.json")
 LEN_GENTX=$(echo ${#GENTX_FILE})
 
 # Gentx Start date
@@ -40,6 +40,7 @@ fi
 
 if [ $LEN_GENTX -eq 0 ]; then
     echo "No new gentx file found."
+    exit 0
 else
     set -e
 
@@ -85,12 +86,7 @@ else
     #     exit 1
     # fi
 
-    ./bin/junod add-genesis-account $RANDOM_KEY 100000000$DENOM --home $JUNOD_HOME \
-        --keyring-backend test
-
-    ./bin/junod gentx $RANDOM_KEY 90000000000000$DENOM --home $JUNOD_HOME \
-        --keyring-backend test --chain-id $CHAIN_ID
-
+    mkdir -p $JUNOD_HOME/config/gentx/
     cp ../$GENTX_FILE $JUNOD_HOME/config/gentx/
 
     echo "..........Collecting gentxs......."
