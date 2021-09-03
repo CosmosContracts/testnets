@@ -85,11 +85,11 @@ else
     #     exit 1
     # fi
 
-    ./bin/junod add-genesis-account $RANDOM_KEY 100000000$DENOM --home $JUNOD_HOME \
-        --keyring-backend test
+    # ./bin/junod add-genesis-account $RANDOM_KEY 100000000$DENOM --home $JUNOD_HOME \
+    #     --keyring-backend test
 
-    ./bin/junod gentx $RANDOM_KEY 90000000000000$DENOM --home $JUNOD_HOME \
-        --keyring-backend test --chain-id $CHAIN_ID
+    # ./bin/junod gentx $RANDOM_KEY 90000000000000$DENOM --home $JUNOD_HOME \
+    #     --keyring-backend test --chain-id $CHAIN_ID
 
     cp ../$GENTX_FILE $JUNOD_HOME/config/gentx/
 
