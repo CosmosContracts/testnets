@@ -5,7 +5,7 @@ CHAIN_ID=hera
 DENOM=ujuno
 # MAXBOND=90000000 # 90JUNO
 
-GENTX_FILE=$(find ./$CHAIN_ID/gentxs -iname "*.json")
+GENTX_FILE=$(find ./$CHAIN_ID/gentx -iname "*.json")
 LEN_GENTX=$(echo ${#GENTX_FILE})
 
 # Gentx Start date
