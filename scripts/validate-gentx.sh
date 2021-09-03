@@ -44,7 +44,7 @@ if [ $LEN_GENTX -eq 0 ]; then
 else
     set -e
 
-    echo "GentxFile::::"
+    echo "GentxFiles::::"
     echo $GENTX_FILE
 
     echo "...........Init Juno.............."
@@ -66,19 +66,22 @@ else
     # this genesis time is different from original genesis time, just for validating gentx.
     sed -i '/genesis_time/c\   \"genesis_time\" : \"2021-09-02T16:00:00Z\",' $JUNOD_HOME/config/genesis.json
 
-    GENACC=$(cat ../$GENTX_FILE | sed -n 's|.*"delegator_address":"\([^"]*\)".*|\1|p')
-    denomquery=$(jq -r '.body.messages[0].value.denom' ../$GENTX_FILE)
-    amountquery=$(jq -r '.body.messages[0].value.amount' ../$GENTX_FILE)
+    find ../$CHAIN_ID/gentx -iname "*.json" -print0 |
+        while IFS= read -r -d '' line; do
+            GENACC=$(cat ../$line | sed -n 's|.*"delegator_address":"\([^"]*\)".*|\1|p')
+            denomquery=$(jq -r '.body.messages[0].value.denom' $line)
+            amountquery=$(jq -r '.body.messages[0].value.amount' $line)
 
-    echo $GENACC
-    echo $amountquery
-    echo $denomquery
+            echo $GENACC
+            echo $amountquery
+            echo $denomquery
 
-    # only allow $DENOM tokens to be bonded
-    if [ $denomquery != $DENOM ]; then
-        echo "invalid denomination"
-        exit 1
-    fi
+            # only allow $DENOM tokens to be bonded
+            if [ $denomquery != $DENOM ]; then
+                echo "invalid denomination"
+                exit 1
+            fi
+        done
 
     # # limit the amount that can be bonded?
     # if [ $amountquery -gt $MAXBOND ]; then
@@ -87,7 +90,7 @@ else
     # fi
 
     mkdir -p $JUNOD_HOME/config/gentx/
-    cp ../$GENTX_FILE $JUNOD_HOME/config/gentx/
+    cp -r ../hera/gentx $JUNOD_HOME/config/gentx/
 
     echo "..........Collecting gentxs......."
     ./bin/junod collect-gentxs --home $JUNOD_HOME &> logs.txt
