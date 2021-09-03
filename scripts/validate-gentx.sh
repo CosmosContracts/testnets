@@ -90,10 +90,10 @@ else
     # fi
 
     mkdir -p $JUNOD_HOME/config/gentx/
-    cp -r ../hera/gentx $JUNOD_HOME/config/gentx/
+    cp -r ../$CHAIN_ID/gentx $JUNOD_HOME/config/gentx/
 
     echo "..........Collecting gentxs......."
-    ./bin/junod collect-gentxs --home $JUNOD_HOME &> logs.txt
+    ./bin/junod collect-gentxs --home $JUNOD_HOME
     sed -i '/persistent_peers =/c\persistent_peers = ""' $JUNOD_HOME/config/config.toml
     sed -i '/minimum-gas-prices =/c\minimum-gas-prices = "0.25ujuno"' $JUNOD_HOME/config/app.toml
 
