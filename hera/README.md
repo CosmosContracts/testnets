@@ -30,6 +30,14 @@ git clone https://github.com/CosmosContracts/Juno
 make build && make install
 ```
 
+install dev tools 
+```
+sudo apt install make clang pkg-config libssl-dev build-essential git jq llvm libudev-dev -y
+``` 
+apt install packages.. and list is list of packages...
+that is basic set for development.
+
+
 This will build and install `junod` binary into `$GOBIN`.
 
 Note: When building from source, it is important to have your `$GOPATH` set correctly. When in doubt, the following should do:
