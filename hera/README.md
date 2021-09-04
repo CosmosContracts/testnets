@@ -27,6 +27,7 @@ export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
 
 ```sh
 git clone https://github.com/CosmosContracts/Juno
+cd Juno
 make build && make install
 ```
 
