@@ -122,6 +122,11 @@ Create a systemd file for your Juno service:
 sudo vi /etc/systemd/system/junod.service
 ```
 
+Create a non-privileged user for your Juno service:
+```sh
+useradd -d /home/juno -s /bin/false -m juno
+```
+
 Copy and paste the following and update `<YOUR_USERNAME>`, `<GO_WORKSPACE>`, and `<CHAIN_ID>`:
 
 ```sh
@@ -129,7 +134,7 @@ Description=Juno daemon
 After=network-online.target
 
 [Service]
-User=root
+User=juno
 ExecStart=/home/<YOUR_USERNAME>/<GO_WORKSPACE>/go/bin/junod start --p2p.laddr tcp://0.0.0.0:26656 --home /home/<YOUR_USERNAME>/.juno
 Restart=on-failure
 RestartSec=3
