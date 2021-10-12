@@ -26,8 +26,8 @@ export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
 ```
 
 ```sh
-git clone https://github.com/CosmosContracts/Juno
-cd Juno
+git clone https://github.com/CosmosContracts/juno
+cd juno
 git checkout v1.0.0
 make build && make install
 ```
@@ -63,14 +63,13 @@ Below are the instructions to generate & submit your genesis transaction
 
 ### Generate genesis transaction (gentx)
 
-1. Initialize the Juno directories and create the local genesis file with the correct
-   chain-id
+1. Initialize the Juno directories and create the local genesis file with the correct chain-id:
 
    ```bash
    junod init <moniker-name> --chain-id=uni
    ```
 
-2. Create a local key pair
+2. Create a local key pair:
 
    ```sh
    > junod keys add <key-name>
@@ -82,7 +81,7 @@ Below are the instructions to generate & submit your genesis transaction
    junod add-genesis-account $(junod keys show <key-name> -a) 10000000000ujuno
    ```
 
-4. Create the gentx
+4. Create the gentx, use only `9000000000ujuno`:
 
    ```bash
    junod gentx <key-name> 9000000000ujuno --chain-id=uni
@@ -117,22 +116,17 @@ Below are the instructions to generate & submit your genesis transaction
 
 #### Running in production
 
-**Note, we'll be going through some upgrades soon after Juno mainnet. Consider using [Cosmovisor](https://github.com/cosmos/cosmos-sdk/tree/master/cosmovisor) to make your life easier.** Setting up Cosmovisor is covered in the [Juno Documentation](https://docs.junochain.com/validators/setting-up-cosmovisor).
+**Note, we'll be going through some upgrades for this testnet. Consider using [Cosmovisor](https://github.com/cosmos/cosmos-sdk/tree/master/cosmovisor) to make your life easier.** Setting up Cosmovisor is covered in the [Juno Documentation](https://docs.junochain.com/validators/setting-up-cosmovisor).
 
-Download Genesis file when the time is right. Put it in your `/home/user/.juno` folder.
+Download Genesis file when the time is right. Put it in your `/home/<user>/.juno` folder.
 
 Create a systemd file for your Juno service:
 
 ```sh
-sudo vi /etc/systemd/system/junod.service
+sudo nano /etc/systemd/system/junod.service
 ```
 
-Create a non-privileged user for your Juno service:
-```sh
-useradd -d /home/juno -s /bin/false -m juno
-```
-
-Copy and paste the following and update `<YOUR_USERNAME>`, `<GO_WORKSPACE>`, and `<CHAIN_ID>`:
+Copy and paste the following and update `<YOUR_USERNAME>` and `<CHAIN_ID>`:
 
 ```sh
 Description=Juno daemon
@@ -140,7 +134,7 @@ After=network-online.target
 
 [Service]
 User=juno
-ExecStart=/home/<YOUR_USERNAME>/<GO_WORKSPACE>/go/bin/junod start --p2p.laddr tcp://0.0.0.0:26656 --home /home/<YOUR_USERNAME>/.juno
+ExecStart=/home/<YOUR_USERNAME>/go/bin/junod start --p2p.laddr tcp://0.0.0.0:26656 --home /home/<YOUR_USERNAME>/.juno
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=4096
@@ -150,7 +144,7 @@ WantedBy=multi-user.target
 ```
 
 2
-**This assumes `$HOME/go_workspace` to be your Go workspace, and `$HOME/.juno` to be your directory for config and data. Your actual directory locations may vary.**
+**This assumes `$HOME/go` to be your Go workspace, and `$HOME/.juno` to be your directory for config and data. Your actual directory locations may vary.**
 
 Enable and start the new service:
 
