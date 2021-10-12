@@ -2,7 +2,7 @@
 JUNOD_HOME="/tmp/junod$(date +%s)"
 RANDOM_KEY="randomjunodvalidatorkey"
 CHAIN_ID=uni
-DENOM=ujuno
+DENOM=ujunox
 VALIDATOR_COINS=10000000000$DENOM
 MAXBOND=9000000000
 GENTX_FILE=$(find ./$CHAIN_ID/gentx -iname "*.json")
@@ -97,7 +97,7 @@ else
     echo "..........Collecting gentxs......."
     ./bin/junod collect-gentxs --home $JUNOD_HOME &> log.txt
     sed -i '/persistent_peers =/c\persistent_peers = ""' $JUNOD_HOME/config/config.toml
-    sed -i '/minimum-gas-prices =/c\minimum-gas-prices = "0.25ujuno"' $JUNOD_HOME/config/app.toml
+    sed -i '/minimum-gas-prices =/c\minimum-gas-prices = "0.25ujunox"' $JUNOD_HOME/config/app.toml
 
     ./bin/junod validate-genesis --home $JUNOD_HOME
 
