@@ -1,6 +1,6 @@
 #!/bin/sh
 JUNOD_HOME="/tmp/junod$(date +%s)"
-CHAIN_ID=hera
+CHAIN_ID=uni
 
 set -e
 
@@ -8,7 +8,7 @@ echo "...........Init Juno.............."
 
 git clone https://github.com/CosmosContracts/Juno
 cd Juno
-git checkout hera
+git checkout v1.0.0
 make build
 chmod +x ./build/junod
 
