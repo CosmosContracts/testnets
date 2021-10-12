@@ -75,16 +75,16 @@ Below are the instructions to generate & submit your genesis transaction
    > junod keys add <key-name>
    ```
 
-3. Add your account to your local genesis file with a given amount and the key you just created. Use only `10000000000ujuno`, other amounts will be ignored.
+3. Add your account to your local genesis file with a given amount and the key you just created. Use only `10000000000ujunox`, other amounts will be ignored.
 
    ```bash
-   junod add-genesis-account $(junod keys show <key-name> -a) 10000000000ujuno
+   junod add-genesis-account $(junod keys show <key-name> -a) 10000000000ujunox
    ```
 
-4. Create the gentx, use only `9000000000ujuno`:
+4. Create the gentx, use only `9000000000ujunox`:
 
    ```bash
-   junod gentx <key-name> 9000000000ujuno --chain-id=uni
+   junod gentx <key-name> 9000000000ujunox --chain-id=uni
    ```
 
    If all goes well, you will see a message similar to the following:
