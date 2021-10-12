@@ -88,7 +88,7 @@ else
                 exit 1
             fi
 
-            ./bin/junod add-genesis-account $(jq -r '.body.messages[0].delegator_address' $line) $VALIDATOR_COINS
+            ./bin/junod add-genesis-account $(jq -r '.body.messages[0].delegator_address' $line) $VALIDATOR_COINS --home $JUNOD_HOME
         done
 
     mkdir -p $JUNOD_HOME/config/gentx/
