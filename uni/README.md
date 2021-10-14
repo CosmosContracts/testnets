@@ -35,6 +35,14 @@ version: HEAD-e507450f2e20aa4017e046bd24a7d8f1d3ca437a
 commit: e507450f2e20aa4017e046bd24a7d8f1d3ca437a
 ```
 
+**Seed nodes**
+
+[Full seed nodes list](/uni/seeds.txt).
+
+```
+17b42def9d3a43a030a5a2824dd7344fc2bc70ba@35.209.191.98:26656,ee6ed9bdd7d61e6521e8711626b32084f2ee5be6@159.203.161.68:26656
+```
+
 ## Setup
 
 **Prerequisites:** Make sure to have [Golang >=1.17](https://golang.org/).
