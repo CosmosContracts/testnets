@@ -10,6 +10,31 @@ If you're interested in earning Juno, checkout [Hack Juno](https://github.com/Co
 
 The plan for this test will be to practice a simulated upgrade as well as test the latest Juno binary (which will include the latest CosmWasm). As such, we will start the testnet with the same `v1.0.0` version as mainnet.
 
+**Genesis File**
+
+[Genesis File](/uni/genesis.json):
+
+```bash
+   curl -s  https://raw.githubusercontent.com/CosmosContracts/testnets/main/uni/genesis.json >~/.juno/config/genesis.json
+```
+
+**Genesis sha256**
+
+```bash
+sha256sum ~/.juno/config/genesis.json
+e3101bbd7bad8976fbb28b7c6f18c134198b4c672a9e7fba009332132d45235f
+```
+
+**junod version**
+
+```bash
+$ junod version --long
+name: juno
+server_name: junod
+version: HEAD-e507450f2e20aa4017e046bd24a7d8f1d3ca437a
+commit: e507450f2e20aa4017e046bd24a7d8f1d3ca437a
+```
+
 ## Setup
 
 **Prerequisites:** Make sure to have [Golang >=1.17](https://golang.org/).
