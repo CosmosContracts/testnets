@@ -1,20 +1,20 @@
 #!/bin/sh
 JUNOD_HOME="/tmp/junod$(date +%s)"
 RANDOM_KEY="randomjunodvalidatorkey"
-CHAIN_ID=hera
-DENOM=ujuno
-# MAXBOND=90000000 # 90JUNO
-
+CHAIN_ID=uni
+DENOM=ujunox
+VALIDATOR_COINS=10000000000$DENOM
+MAXBOND=9000000000
 GENTX_FILE=$(find ./$CHAIN_ID/gentx -iname "*.json")
 LEN_GENTX=$(echo ${#GENTX_FILE})
 
 # Gentx Start date
-start="2021-09-01 01:00:00Z"
+start="2021-10-11 01:00:00Z"
 # Compute the seconds since epoch for start date
 stTime=$(date --date="$start" +%s)
 
 # Gentx End date
-end="2021-09-08 10:00:00Z"
+end="2021-10-14 18:00:00Z"
 # Compute the seconds since epoch for end date
 endTime=$(date --date="$end" +%s)
 
@@ -51,7 +51,7 @@ else
 
     git clone https://github.com/CosmosContracts/Juno
     cd Juno
-    git checkout hera
+    git checkout v1.0.0
     make build
     chmod +x ./bin/junod
 
@@ -81,13 +81,15 @@ else
                 echo "invalid denomination"
                 exit 1
             fi
-        done
 
-    # # limit the amount that can be bonded?
-    # if [ $amountquery -gt $MAXBOND ]; then
-    #     echo "bonded too much: $amountquery > $MAXBOND"
-    #     exit 1
-    # fi
+            # limit the amount that can be bonded
+            if [ $amountquery -gt $MAXBOND ]; then
+                echo "bonded too much: $amountquery > $MAXBOND"
+                exit 1
+            fi
+
+            ./bin/junod add-genesis-account $(jq -r '.body.messages[0].delegator_address' $line) $VALIDATOR_COINS --home $JUNOD_HOME
+        done
 
     mkdir -p $JUNOD_HOME/config/gentx/
     cp -r ../$CHAIN_ID/gentx/* $JUNOD_HOME/config/gentx/
@@ -95,7 +97,7 @@ else
     echo "..........Collecting gentxs......."
     ./bin/junod collect-gentxs --home $JUNOD_HOME &> log.txt
     sed -i '/persistent_peers =/c\persistent_peers = ""' $JUNOD_HOME/config/config.toml
-    sed -i '/minimum-gas-prices =/c\minimum-gas-prices = "0.25ujuno"' $JUNOD_HOME/config/app.toml
+    sed -i '/minimum-gas-prices =/c\minimum-gas-prices = "0.25ujunox"' $JUNOD_HOME/config/app.toml
 
     ./bin/junod validate-genesis --home $JUNOD_HOME
 
