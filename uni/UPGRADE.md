@@ -2,7 +2,7 @@
 
 The time has come to start testing Moneta on uni. The upgrade proposal is [here](https://uni.junoscan.com/proposals/1).
 
-The Upgrade is scheduled for block 250,130, which should be about 3PM UTC on Monday 1st November.
+The Upgrade is scheduled for block `250,130`, which should be about _3PM UTC on Monday 1st November_.
 
 A good bet is to check in beforehand to get a feel for whether the block will arrive early or late. Since this was generated a few days in advance based on an estimated block height, it could easily be +/- over an hour.
 
