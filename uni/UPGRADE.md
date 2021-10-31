@@ -11,17 +11,17 @@ For unattended updates, [cosmovisor is your friend](https://docs.junochain.com/v
 ```bash
 # get the new version
 git pull
-git checkout v2.0.0-alpha.1
+git checkout v2.0.0-alpha.2
 make build && make install
 
-# check the version - should be v2.0.0-alpha.1
-# junod version --long will be commit 5242216bac27ad56f0c3f19e7c9e1c95484ed423
+# check the version - should be v2.0.0-alpha.2
+# junod version --long will be commit 7bebb5dc339f21e892f9f6e7b1d63b1035ccc402
 junod version
 
 # if you are using cosmovisor you then need to copy this new binary
 cp /home/<your-user>/go/bin/junod $DAEMON_HOME/cosmovisor/upgrades/moneta-alpha/bin
 
-# find out what version you are about to run - should be v2.0.0-alpha.1
+# find out what version you are about to run - should be v2.0.0-alpha.2
 .juno/cosmovisor/upgrades/moneta-alpha/bin/junod version
 ```
 
