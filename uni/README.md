@@ -1,12 +1,8 @@
 # Junø - Uni Testnet
 
-_Planned Start Time: October 15th at 4 PM UTC._
+If you wish to participate in **Attack on Testnet** please check out: [Attack on Testnet](https://github.com/CosmosContracts/testnets/blob/attack-on-testnet/uni/ATTACK.md)
 
-Please have your gentx submitted by Thursday, October 14th, 6pm UTC if you wish to participate.
-
-**This testnet will not be incentivized.**
-
-If you're interested in earning Juno, checkout [Hack Juno](https://github.com/CosmosContracts/hack-juno) or consider running a [mainnet validator](https://docs.junochain.com/validators/joining-mainnet).
+If you're interested in earning more Juno, check out [Hack Juno](https://github.com/CosmosContracts/hack-juno) or consider running a [mainnet validator](https://docs.junochain.com/validators/joining-mainnet).
 
 The plan for this test will be to practice a simulated upgrade as well as test the latest Juno binary (which will include the latest CosmWasm). As such, we will start the testnet with the same `v1.0.0` version as mainnet.
 
