@@ -2,7 +2,6 @@
 
 ![att2](https://user-images.githubusercontent.com/63689287/141705292-86e3daa5-5616-4cda-a03e-ffeb1e445857.png)
 
-_Planned Start Time: December 1st at 1 PM UTC._
 
 Join in and help us find vulnerabilities on the Uni testnet!
 
