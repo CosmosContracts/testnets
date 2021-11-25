@@ -28,36 +28,3 @@ cp /home/<your-user>/go/bin/junod $DAEMON_HOME/cosmovisor/upgrades/moneta-alpha/
 The chain will automatically halt at the target height, at which point you can manually replace the binary.
 
 However, we _strongly recommend_ using an automation tool such as cosmovisor, using [this guide](https://docs.junochain.com/validators/setting-up-cosmovisor).
-
-# Moneta Beta
-
-It's time for the final round of upgrade testing. The upgrade proposal is [here](https://uni.junoscan.com/proposals/3).
-
-The Upgrade is scheduled for block `XXX`, which should be about _XPM UTC on XXX_.
-
-Please check in on the day to see whether the target block will be early or late. +/- more than an hour is not uncommon
-
-As always, for unattended updates, [use cosmovisor](https://docs.junochain.com/validators/setting-up-cosmovisor).
-
-```bash
-# get the new version
-git pull
-git checkout v2.0.0-beta.1
-make build && make install
-
-# check the version - should be v2.0.0-beta.1
-# junod version --long will be commit XXX
-junod version
-
-# if you are using cosmovisor you then need to copy this new binary
-cp /home/<your-user>/go/bin/junod $DAEMON_HOME/cosmovisor/upgrades/moneta-beta/bin
-
-# find out what version you are about to run - should be v2.0.0-beta.1
-.juno/cosmovisor/upgrades/moneta-beta/bin/junod version
-```
-
-The chain will automatically halt at the target height, at which point you can manually replace the binary.
-
-However, we _strongly recommend_ using an automation tool such as cosmovisor, using [this guide](https://docs.junochain.com/validators/setting-up-cosmovisor).
-
-Let's gooo! 🚀
