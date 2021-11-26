@@ -1,8 +1,10 @@
 # Moneta Beta
 
-It's time for the final round of upgrade testing. The upgrade proposal is [here](https://uni.junoscan.com/proposals/4).
+After a slight misfire due to block times being reported wrong, it's time for the final round of upgrade testing. The upgrade proposal is [here](https://uni.junoscan.com/proposals/5).
 
-The Upgrade is scheduled for block `589,705`, which should be about _4PM UTC on Friday 26th Nov_.
+The Upgrade is scheduled for block `621,000`, which should be about _4PM UTC on Sunday 28th Nov_.
+
+If you've already set your update to run unattended, then _you do not need to take further action_.
 
 Please check in on the day to see whether the target block will be early or late. +/- more than an hour is not uncommon.
 
