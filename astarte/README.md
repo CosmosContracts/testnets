@@ -6,10 +6,10 @@ The plan for this testnet is to simulate upgrading from juno `v1.0.0` to the pro
 
 **Genesis File**
 
-[Genesis File](/astarte/genesis.json):
+[Genesis File](/astarte/pre-genesis.json):
 
 ```bash
-   curl -s  https://raw.githubusercontent.com/CosmosContracts/testnets/main/astarte/genesis.json >~/.juno/config/genesis.json
+   curl -s  https://raw.githubusercontent.com/CosmosContracts/testnets/main/astarte/pre-genesis.json >~/.juno/config/genesis.json
 ```
 
 **Genesis sha256**
