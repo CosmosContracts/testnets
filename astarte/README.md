@@ -2,21 +2,21 @@
 
 If you're interested in earning more Juno, check out [Hack Juno](https://github.com/CosmosContracts/hack-juno) or consider running a [mainnet validator](https://docs.junochain.com/validators/joining-mainnet).
 
-The plan for this test will be to practice a simulated upgrade as well as test the latest Juno binary (which will include the latest CosmWasm). As such, we will start the testnet with the same `v1.0.0` version as mainnet.
+The plan for this testnet is to simulate upgrading from juno `v1.0.0` to the production version of Moneta update, juno `v2.0.0`. Subsequently, the testnet will become the new development and testing ground for juno dapps.
 
 **Genesis File**
 
-[Genesis File](/astarte/genesis.json):
+[Genesis File](/astarte/pre-genesis.json):
 
 ```bash
-   curl -s  https://raw.githubusercontent.com/CosmosContracts/testnets/main/astarte/genesis.json >~/.juno/config/genesis.json
+   curl -s  https://raw.githubusercontent.com/CosmosContracts/testnets/main/astarte/pre-genesis.json >~/.juno/config/genesis.json
 ```
 
 **Genesis sha256**
 
 ```bash
 sha256sum ~/.juno/config/genesis.json
-e3101bbd7bad8976fbb28b7c6f18c134198b4c672a9e7fba009332132d45235f
+# TBD prior to launch
 ```
 
 **junod version**
@@ -45,11 +45,21 @@ TBD
 
 You need to ensure your gopath configuration is correct. If the following **'make'** step does not work then you might have to add these lines to your .profile or .zshrc in the users home folder:
 
+```sh
+nano ~/.profile
+```
+
 ```
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export GO111MODULE=on
 export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
+```
+
+Source update .profile
+
+```sh
+source .profile
 ```
 
 ```sh
@@ -80,9 +90,9 @@ commit: e507450f2e20aa4017e046bd24a7d8f1d3ca437a
 
 ### Minimum hardware requirements
 
-- 2GB RAM
-- 100GB of disk space
-- 1.4 GHz amd64 CPU
+- 16GB RAM
+- 1TB of disk space
+- 4 CORES 1.4 GHz amd64 CPU
 
 ## Setup validator node
 
@@ -147,7 +157,7 @@ Below are the instructions to generate & submit your genesis transaction
 
 Download Genesis file when the time is right. Put it in your `/home/<user>/.juno` folder.
 
-Create a systemd file for your Juno service:
+If you have not installed cosmovisor, create a systemd file for your Juno service:
 
 ```sh
 sudo nano /etc/systemd/system/junod.service
@@ -161,7 +171,7 @@ After=network-online.target
 
 [Service]
 User=juno
-ExecStart=/home/<YOUR_USERNAME>/go/bin/junod start --p2p.laddr tcp://0.0.0.0:26656 --home /home/<YOUR_USERNAME>/.juno
+ExecStart=/home/<YOUR_USERNAME>/go/bin/junod start
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=4096
@@ -169,9 +179,6 @@ LimitNOFILE=4096
 [Install]
 WantedBy=multi-user.target
 ```
-
-2
-**This assumes `$HOME/go` to be your Go workspace, and `$HOME/.juno` to be your directory for config and data. Your actual directory locations may vary.**
 
 Enable and start the new service:
 
@@ -195,5 +202,4 @@ journalctl -u junod -f
 ### Learn more
 
 - [Cosmos Network](https://cosmos.network)
-- [Cosmos Community Discord](https://discord.com/invite/W8trcGV) (check out the #starport channel)
 - [Juno Documentation](https://docs.junochain.com/)
