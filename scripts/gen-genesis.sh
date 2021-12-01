@@ -1,6 +1,6 @@
 #!/bin/sh
 JUNOD_HOME="/tmp/junod$(date +%s)"
-CHAIN_ID=uni
+CHAIN_ID=astarte
 
 set -e
 
