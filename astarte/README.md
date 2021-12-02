@@ -2,7 +2,7 @@
 
 If you're interested in earning more Juno, check out [Hack Juno](https://github.com/CosmosContracts/hack-juno) or consider running a [mainnet validator](https://docs.junochain.com/validators/joining-mainnet).
 
-The plan for this testnet is to simulate upgrading from juno `v1.0.0` to the production version of Moneta update, juno `v2.0.0`. Subsequently, the testnet will become the new development and testing ground for juno dapps.
+The plan for this testnet is to simulate upgrading from juno `v1.0.0` to the production version of Moneta update, juno `v2.0.0`. 
 
 **Genesis File**
 
