@@ -6,10 +6,10 @@ The plan for this testnet is to simulate upgrading from juno `v1.0.0` to the pro
 
 **Genesis File**
 
-[Genesis File](/astarte/pre-genesis.json):
+[Genesis File](/astarte/genesis.json):
 
 ```bash
-   curl -s  https://raw.githubusercontent.com/CosmosContracts/testnets/main/astarte/pre-genesis.json >~/.juno/config/genesis.json
+   curl -s  https://raw.githubusercontent.com/CosmosContracts/testnets/main/astarte/genesis.json > ~/.juno/config/genesis.json
 ```
 
 **Genesis sha256**
@@ -31,10 +31,12 @@ commit: e507450f2e20aa4017e046bd24a7d8f1d3ca437a
 
 **Seed nodes**
 
-[Full seed nodes list](/astarte/seeds.txt).
+N/A
+
+**Persistent Peers**
 
 ```
-TBD
+persistent_peers = "adec463d2bf1c77d32f7b657b2fd5531ff649d30@143.244.189.189:26656,e9cd81bab804b344250a9b0badd789f00e53e504@137.184.41.239:26656,a18288a681147947aab5aae96bbdfe2a4af2cd4d@95.216.7.58:26656,03420cc7768bfd3af4a756ee15e446899da29a3d@172.104.155.100:26656,c870182801cb9d845b094ef24878afecdea0b41a@178.62.73.102:26656,cf942e196cc4e405ea70c634b698e350a961055f@202.61.192.72:26656,4b0c7e5ff84a954bd597cd8e0451f0de70b7353e@50.250.156.59:26656"
 ```
 
 ## Setup
@@ -90,9 +92,9 @@ commit: e507450f2e20aa4017e046bd24a7d8f1d3ca437a
 
 ### Minimum hardware requirements
 
-- 16GB RAM
-- 1TB of disk space
-- 4 CORES 1.4 GHz amd64 CPU
+- 8-16GB RAM
+- 100GB of disk space
+- 2 cores
 
 ## Setup validator node
 

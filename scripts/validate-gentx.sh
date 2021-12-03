@@ -14,7 +14,7 @@ start="2021-10-11 01:00:00Z"
 stTime=$(date --date="$start" +%s)
 
 # Gentx End date
-end="2021-10-14 18:00:00Z"
+end="2021-12-03 14:00:00Z"
 # Compute the seconds since epoch for end date
 endTime=$(date --date="$end" +%s)
 
@@ -26,12 +26,12 @@ curTime=$(date --date="$current" +%s)
 if [[ $curTime < $stTime ]]; then
     echo "start=$stTime:curent=$curTime:endTime=$endTime"
     echo "Gentx submission is not open yet. Please close the PR and raise a new PR after 30-August-2021 10:00:00 UTC"
-    exit 0
+    exit 1
 else
     if [[ $curTime > $endTime ]]; then
         echo "start=$stTime:curent=$curTime:endTime=$endTime"
         echo "Gentx submission is closed"
-        exit 0
+        exit 1
     else
         echo "Gentx is now open"
         echo "start=$stTime:curent=$curTime:endTime=$endTime"
@@ -40,7 +40,7 @@ fi
 
 if [ $LEN_GENTX -eq 0 ]; then
     echo "No new gentx file found."
-    exit 0
+    exit 1
 else
     set -e
 
@@ -49,8 +49,8 @@ else
 
     echo "...........Init Juno.............."
 
-    git clone https://github.com/CosmosContracts/Juno
-    cd Juno
+    git clone https://github.com/CosmosContracts/juno
+    cd juno
     git checkout v1.0.0
     make build
     chmod +x ./bin/junod
@@ -61,7 +61,7 @@ else
 
     echo "..........Fetching genesis......."
     rm -rf $JUNOD_HOME/config/genesis.json
-    curl -s  https://raw.githubusercontent.com/CosmosContracts/testnets/main/$CHAIN_ID/pre-genesis.json >$JUNOD_HOME/config/genesis.json
+    curl -s  https://raw.githubusercontent.com/CosmosContracts/testnets/main/$CHAIN_ID/pre-genesis.json > $JUNOD_HOME/config/genesis.json
 
     # this genesis time is different from original genesis time, just for validating gentx.
     sed -i '/genesis_time/c\   \"genesis_time\" : \"2021-09-02T16:00:00Z\",' $JUNOD_HOME/config/genesis.json
@@ -92,6 +92,15 @@ else
         done
 
     mkdir -p $JUNOD_HOME/config/gentx/
+
+    # # add junod validator so it can start
+    # ./bin/junod add-genesis-account $RANDOM_KEY 100000000000000$DENOM --home $JUNOD_HOME \
+    #     --keyring-backend test
+    # #submit a gentx
+    # ./bin/junod gentx $RANDOM_KEY 90000000000000$DENOM --home $JUNOD_HOME \
+    #     --keyring-backend test --chain-id $CHAIN_ID
+
+    # add submitted gentxs
     cp -r ../$CHAIN_ID/gentx/* $JUNOD_HOME/config/gentx/
 
     echo "..........Collecting gentxs......."
@@ -101,16 +110,16 @@ else
 
     ./bin/junod validate-genesis --home $JUNOD_HOME
 
-    echo "..........Starting node......."
-    ./bin/junod start --home $JUNOD_HOME &
+    # echo "..........Starting node......."
+    # ./bin/junod start --home $JUNOD_HOME &
 
-    sleep 90s
+    # sleep 90s
 
-    echo "...checking network status.."
+    # echo "...checking network status.."
 
-    ./bin/junod status --node http://localhost:26657
+    # ./bin/junod status --node http://localhost:26657
 
-    echo "...Cleaning the stuff..."
-    killall junod >/dev/null 2>&1
-    rm -rf $JUNOD_HOME >/dev/null 2>&1
+    # echo "...Cleaning the stuff..."
+    # killall junod >/dev/null 2>&1
+    # rm -rf $JUNOD_HOME >/dev/null 2>&1
 fi
