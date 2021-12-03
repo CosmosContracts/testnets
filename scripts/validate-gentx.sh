@@ -110,16 +110,16 @@ else
 
     ./bin/junod validate-genesis --home $JUNOD_HOME
 
-    # echo "..........Starting node......."
-    # ./bin/junod start --home $JUNOD_HOME &
+    echo "..........Starting node......."
+    ./bin/junod start --home $JUNOD_HOME &
 
-    # sleep 90s
+    sleep 90s
 
-    # echo "...checking network status.."
+    echo "...checking network status.."
 
-    # ./bin/junod status --node http://localhost:26657
+    ./bin/junod status --node http://localhost:26657
 
-    # echo "...Cleaning the stuff..."
-    # killall junod >/dev/null 2>&1
-    # rm -rf $JUNOD_HOME >/dev/null 2>&1
+    echo "...Cleaning the stuff..."
+    killall junod >/dev/null 2>&1
+    rm -rf $JUNOD_HOME >/dev/null 2>&1
 fi
