@@ -40,7 +40,7 @@ fi
 
 if [ $LEN_GENTX -eq 0 ]; then
     echo "No new gentx file found."
-    exit 0
+    exit 1
 else
     set -e
 
