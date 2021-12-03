@@ -49,8 +49,8 @@ else
 
     echo "...........Init Juno.............."
 
-    git clone https://github.com/CosmosContracts/Juno
-    cd Juno
+    git clone https://github.com/CosmosContracts/juno
+    cd juno
     git checkout v1.0.0
     make build
     chmod +x ./bin/junod
@@ -61,7 +61,7 @@ else
 
     echo "..........Fetching genesis......."
     rm -rf $JUNOD_HOME/config/genesis.json
-    curl -s  https://raw.githubusercontent.com/CosmosContracts/testnets/main/$CHAIN_ID/pre-genesis.json >$JUNOD_HOME/config/genesis.json
+    curl -s  https://raw.githubusercontent.com/CosmosContracts/testnets/main/$CHAIN_ID/pre-genesis.json > $JUNOD_HOME/config/genesis.json
 
     # this genesis time is different from original genesis time, just for validating gentx.
     sed -i '/genesis_time/c\   \"genesis_time\" : \"2021-09-02T16:00:00Z\",' $JUNOD_HOME/config/genesis.json
@@ -102,13 +102,13 @@ else
     ./bin/junod validate-genesis --home $JUNOD_HOME
 
     echo "..........Starting node......."
-    ./bin/junod start --home $JUNOD_HOME &
+    ./bin/junod start --chain-id $CHAIN_ID --home $JUNOD_HOME &
 
     sleep 90s
 
     echo "...checking network status.."
 
-    ./bin/junod status --node http://localhost:26657
+    ./bin/junod status --chain-id $CHAIN_ID --node http://localhost:26657
 
     echo "...Cleaning the stuff..."
     killall junod >/dev/null 2>&1
