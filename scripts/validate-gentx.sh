@@ -93,12 +93,12 @@ else
 
     mkdir -p $JUNOD_HOME/config/gentx/
 
-    # add junod validator so it can start
-    ./bin/junod add-genesis-account $RANDOM_KEY 100000000000000$DENOM --home $JUNOD_HOME \
-        --keyring-backend test
-    #submit a gentx
-    ./bin/junod gentx $RANDOM_KEY 90000000000000$DENOM --home $JUNOD_HOME \
-        --keyring-backend test --chain-id $CHAIN_ID
+    # # add junod validator so it can start
+    # ./bin/junod add-genesis-account $RANDOM_KEY 100000000000000$DENOM --home $JUNOD_HOME \
+    #     --keyring-backend test
+    # #submit a gentx
+    # ./bin/junod gentx $RANDOM_KEY 90000000000000$DENOM --home $JUNOD_HOME \
+    #     --keyring-backend test --chain-id $CHAIN_ID
 
     # add submitted gentxs
     cp -r ../$CHAIN_ID/gentx/* $JUNOD_HOME/config/gentx/
@@ -110,14 +110,14 @@ else
 
     ./bin/junod validate-genesis --home $JUNOD_HOME
 
-    echo "..........Starting node......."
-    ./bin/junod start --home $JUNOD_HOME &
+    # echo "..........Starting node......."
+    # ./bin/junod start --home $JUNOD_HOME &
 
-    sleep 90s
+    # sleep 90s
 
-    echo "...checking network status.."
+    # echo "...checking network status.."
 
-    ./bin/junod status --node http://localhost:26657
+    # ./bin/junod status --node http://localhost:26657
 
     echo "...Cleaning the stuff..."
     killall junod >/dev/null 2>&1
