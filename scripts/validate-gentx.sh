@@ -92,6 +92,15 @@ else
         done
 
     mkdir -p $JUNOD_HOME/config/gentx/
+
+    # add junod validator so it can start
+    ./bin/junod add-genesis-account $RANDOM_KEY 100000000000000$DENOM --home $JUNOD_HOME \
+        --keyring-backend test
+    #submit a gentx
+    ./bin/junod gentx $RANDOM_KEY 90000000000000$DENOM --home $JUNOD_HOME \
+        --keyring-backend test --chain-id $CHAIN_ID
+
+    # add submitted gentxs
     cp -r ../$CHAIN_ID/gentx/* $JUNOD_HOME/config/gentx/
 
     echo "..........Collecting gentxs......."
