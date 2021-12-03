@@ -11,7 +11,7 @@ The Upgrade is scheduled for block `28900`, which should be about _5PM UTC on 5t
 
 Look, we've messed up block times before, we're all tired, so check in beforehand to see what the ETA is if you're doing this by hand...
 
-But let's face it, you're using, [cosmovisor](https://docs.junochain.com/validators/setting-up-cosmovisor), so this upgrade will happen while you're down the pub.
+But let's face it, you're using, [cosmovisor](https://docs.junochain.com/validators/setting-up-cosmovisor), so this upgrade will happen while you're down at the pub.
 
 ```bash
 # get the new version
