@@ -14,7 +14,7 @@ start="2021-10-11 01:00:00Z"
 stTime=$(date --date="$start" +%s)
 
 # Gentx End date
-end="2021-10-14 18:00:00Z"
+end="2021-12-03 14:00:00Z"
 # Compute the seconds since epoch for end date
 endTime=$(date --date="$end" +%s)
 
@@ -26,12 +26,12 @@ curTime=$(date --date="$current" +%s)
 if [[ $curTime < $stTime ]]; then
     echo "start=$stTime:curent=$curTime:endTime=$endTime"
     echo "Gentx submission is not open yet. Please close the PR and raise a new PR after 30-August-2021 10:00:00 UTC"
-    exit 0
+    exit 1
 else
     if [[ $curTime > $endTime ]]; then
         echo "start=$stTime:curent=$curTime:endTime=$endTime"
         echo "Gentx submission is closed"
-        exit 0
+        exit 1
     else
         echo "Gentx is now open"
         echo "start=$stTime:curent=$curTime:endTime=$endTime"
