@@ -102,13 +102,13 @@ else
     ./bin/junod validate-genesis --home $JUNOD_HOME
 
     echo "..........Starting node......."
-    ./bin/junod start --chain-id $CHAIN_ID --home $JUNOD_HOME &
+    ./bin/junod start --home $JUNOD_HOME &
 
     sleep 90s
 
     echo "...checking network status.."
 
-    ./bin/junod status --chain-id $CHAIN_ID --node http://localhost:26657
+    ./bin/junod status --node http://localhost:26657
 
     echo "...Cleaning the stuff..."
     killall junod >/dev/null 2>&1
