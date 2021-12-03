@@ -119,7 +119,7 @@ else
 
     # ./bin/junod status --node http://localhost:26657
 
-    echo "...Cleaning the stuff..."
-    killall junod >/dev/null 2>&1
-    rm -rf $JUNOD_HOME >/dev/null 2>&1
+    # echo "...Cleaning the stuff..."
+    # killall junod >/dev/null 2>&1
+    # rm -rf $JUNOD_HOME >/dev/null 2>&1
 fi
