@@ -1,6 +1,6 @@
 # Junø - Uni Testnet
 
-If you wish to participate in **Attack on Testnet** please check out: [Attack on Testnet](https://github.com/CosmosContracts/testnets/blob/attack-on-testnet/uni/ATTACK.md)
+If you wish to participate in **Attack on Testnet** please check out: [Attack on Testnet](https://github.com/CosmosContracts/testnets/blob/main/uni/ATTACK.md)
 
 If you're interested in earning more Juno, check out [Hack Juno](https://github.com/CosmosContracts/hack-juno) or consider running a [mainnet validator](https://docs.junochain.com/validators/joining-mainnet).
 
