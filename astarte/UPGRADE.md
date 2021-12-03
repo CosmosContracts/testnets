@@ -2,7 +2,7 @@
 
 It's Moneta time, baby. The upgrade proposal is will be number 1, and you can query it via CLI.
 
-The Upgrade is scheduled for block `X`, which should be about _XPM UTC on X_.
+The Upgrade is scheduled for block `28900`, which should be about _5PM UTC on 5th December 2021_.
 
 Look, we've messed up block times before, we're all tired, so check in beforehand to see what the ETA is if you're doing this by hand...
 
@@ -25,4 +25,4 @@ cp /home/<your-user>/go/bin/junod $DAEMON_HOME/cosmovisor/upgrades/moneta/bin
 $DAEMON_HOME/cosmovisor/upgrades/moneta/bin/junod version
 ```
 
-🚀
+YOLO LFG WAGMI 🚀🌙
