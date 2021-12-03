@@ -1,6 +1,11 @@
 # Moneta
 
-It's Moneta time, baby. The upgrade proposal is will be number 1, and you can query it via CLI.
+It's Moneta time, baby. The upgrade proposal is number 1, and you can query it via CLI.
+
+```bash
+junod q gov proposal 1 # prop info
+junod q gov tally 1 # vote info
+```
 
 The Upgrade is scheduled for block `28900`, which should be about _5PM UTC on 5th December 2021_.
 
