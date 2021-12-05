@@ -1,6 +1,14 @@
 # Junø - astarte-1 Testnet
 
-The plan for this testnet is to simulate upgrading from juno `v1.0.0` to the production version of Moneta update, juno `v2.0.2`. 
+The plan for this testnet is to simulate upgrading from juno `v1.0.0` to the production version of Moneta update, juno `v2.0.2`.
+
+## First!
+
+1. Stop your node
+2. Reset `junod unsafe-reset-all`
+3. Remove genesis `rm .juno/config/genesis.json`
+4. Remove gentxs `rm -r .juno/config/gentx/`
+5. Follow generate gentx as normal below
 
 **Genesis File**
 
@@ -14,7 +22,7 @@ The plan for this testnet is to simulate upgrading from juno `v1.0.0` to the pro
 
 ```bash
 sha256sum ~/.juno/config/genesis.json
-# 6fe982ab61040244b5c1d9c1beef95ab202522095cc1032fd8aa580cdf1157cf
+# 
 ```
 
 **junod version**
