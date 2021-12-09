@@ -2,7 +2,7 @@
 
 The plan for this testnet is to simulate upgrading from juno `v1.0.0` to the production version of Moneta update, juno `v2.0.2`.
 
-## First!
+## If you are reusing a testnet box, do this first
 
 1. Stop your node
 2. Reset `junod unsafe-reset-all`
