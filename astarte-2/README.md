@@ -1,6 +1,6 @@
-# Junø - astarte-1 Testnet
+# Junø - astarte-2 Testnet
 
-The plan for this testnet is to simulate upgrading from juno `v1.0.0` to the production version of Moneta update, juno `v2.0.2`.
+The plan for this testnet is to simulate upgrading from juno `v1.0.0` to a new candidate version for Moneta, juno `v2.0.4`.
 
 ## If you are reusing a testnet box, do this first
 
