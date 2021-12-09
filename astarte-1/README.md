@@ -22,7 +22,7 @@ The plan for this testnet is to simulate upgrading from juno `v1.0.0` to the pro
 
 ```bash
 sha256sum ~/.juno/config/genesis.json
-# 
+# 1101a0472b7542d9e321749aaf929ae46cb669fcf497deb4c824ec297589a3b0
 ```
 
 **junod version**
@@ -42,7 +42,7 @@ N/A
 **Persistent Peers**
 
 ```
-
+bc521bcc5386d7841e99d45f11a52c95972330c5@137.184.41.239:26656,4b0c7e5ff84a954bd597cd8e0451f0de70b7353e@50.250.156.59:26656,a18288a681147947aab5aae96bbdfe2a4af2cd4d@95.216.7.58:26656
 ```
 
 ## Setup
