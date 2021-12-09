@@ -8,7 +8,8 @@ The plan for this testnet is to simulate upgrading from juno `v1.0.0` to a new c
 2. Reset `junod unsafe-reset-all`
 3. Remove genesis `rm .juno/config/genesis.json`
 4. Remove gentxs `rm -r .juno/config/gentx/`
-5. Follow generate gentx as normal below
+5. If you are using cosmovisor, remove symlink: `rm .juno/cosmovisor/current`
+6. Follow generate gentx as normal below
 
 **Genesis File**
 
