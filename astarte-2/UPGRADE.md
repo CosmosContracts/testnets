@@ -16,17 +16,17 @@ You can either YOLO and assume cosmovisor will have your back or check Discord t
 ```bash
 # get the new version
 git checkout main && git pull
-git checkout v2.0.4
+git checkout v2.0.5
 make build && make install
 
-# check the version - should be v2.0.4
-# junod version --long will be commit 00af7e85c6dcf2296e830279ac0ca3fda14eab38
+# check the version - should be v2.0.5
+# junod version --long will be commit 3232a65e0d7bec7e0d01b48b86fe158908a1fc05
 junod version
 
 # if you are using cosmovisor you then need to copy this new binary
 cp /home/<your-user>/go/bin/junod $DAEMON_HOME/cosmovisor/upgrades/moneta/bin
 
-# find out what version you are about to run - should be v2.0.4
+# find out what version you are about to run - should be v2.0.5
 $DAEMON_HOME/cosmovisor/upgrades/moneta/bin/junod version
 ```
 
