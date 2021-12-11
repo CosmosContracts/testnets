@@ -20,7 +20,7 @@ git checkout v2.0.4
 make build && make install
 
 # check the version - should be v2.0.4
-# junod version --long will be commit X
+# junod version --long will be commit 00af7e85c6dcf2296e830279ac0ca3fda14eab38
 junod version
 
 # if you are using cosmovisor you then need to copy this new binary
