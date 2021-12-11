@@ -9,7 +9,7 @@ junod q gov proposal 1 # prop info
 junod q gov tally 1 # vote info
 ```
 
-The Upgrade is scheduled for block `X`, which should be about _XPM UTC on 12th December 2021_.
+The Upgrade is scheduled for block `30000`, which should be about _17:30PM UTC on 12th December 2021_.
 
 You can either YOLO and assume cosmovisor will have your back or check Discord tomorrow. We have a set of about 11 validators so PLEASE AUTOMATE THE UPGRADE or I will be sad 😢
 
