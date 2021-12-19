@@ -1,7 +1,7 @@
 #!/bin/sh
 JUNOD_HOME="/tmp/junod$(date +%s)"
 RANDOM_KEY="randomjunodvalidatorkey"
-CHAIN_ID=astarte-2
+CHAIN_ID=astarte-3
 DENOM=ujunox
 VALIDATOR_COINS=10000000000$DENOM
 MAXBOND=9000000000
@@ -14,7 +14,7 @@ start="2021-10-11 01:00:00Z"
 stTime=$(date --date="$start" +%s)
 
 # Gentx End date
-end="2021-12-10 11:00:00Z"
+end="2021-12-20 09:00:00Z"
 # Compute the seconds since epoch for end date
 endTime=$(date --date="$end" +%s)
 
@@ -51,7 +51,7 @@ else
 
     git clone https://github.com/CosmosContracts/juno
     cd juno
-    git checkout v1.0.0
+    git checkout v2.0.6
     make build
     chmod +x ./bin/junod
 
