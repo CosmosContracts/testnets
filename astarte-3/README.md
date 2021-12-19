@@ -94,8 +94,8 @@ Check that you have the right Juno version installed:
 $ junod version --long
 name: juno
 server_name: junod
-version: HEAD-e507450f2e20aa4017e046bd24a7d8f1d3ca437a
-commit: e507450f2e20aa4017e046bd24a7d8f1d3ca437a
+version: v2.0.6
+commit: d9c8ee6d13076f549688662aaeade4499e108d15
 ```
 
 ### Minimum hardware requirements
