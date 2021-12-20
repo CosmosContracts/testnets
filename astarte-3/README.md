@@ -24,7 +24,7 @@ The plan for this testnet is to simulate upgrading from juno `v2.0.6` to a patch
 
 ```bash
 sha256sum ~/.juno/config/genesis.json
-# TBC
+# ffddf464bdd28480b0f5db5057bd1b6a82bc0ef3b3573a6492b2bcb5edeface9
 ```
 
 **junod version**
