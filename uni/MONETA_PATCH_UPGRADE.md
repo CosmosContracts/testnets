@@ -2,7 +2,7 @@
 
 Mainnet validators will be familiar with this one.
 
-The upgrade is scheduled for block `X`, which should be about _XPM UTC on Xrd January 2022_.
+The upgrade is scheduled for block `1204000`, which should be about _6PM UTC on Friday 7th January 2022_.
 
 ### Step 1: download and verify
 
