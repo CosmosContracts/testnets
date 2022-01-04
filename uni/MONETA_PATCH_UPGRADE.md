@@ -1,6 +1,6 @@
 ## v2.1.0 Patch
 
-Mainnet validators will be familiar with this one.
+Mainnet validators will be familiar with this one. We're going to update the testnet so that it's on the same patched version of the binary as mainnet. This will allow smart contract authors and teams to verify their code is working before deploying to mainnet.
 
 The upgrade is scheduled for block `1204000`, which should be about _6PM UTC on Friday 7th January 2022_.
 
