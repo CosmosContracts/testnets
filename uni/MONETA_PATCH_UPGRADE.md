@@ -18,13 +18,13 @@ wget https://github.com/CosmosContracts/juno/releases/download/v2.1.0/junod -O /
 junod version --long
 
 # confirm it is using the static lib - should return "not a dynamic executable"
-ldd /home/<your-user>/go/bin/junod
+ldd $(which junod)
 
 # if you really want to be sure
 # this should return:
 # ELF 64-bit LSB executable, x86-64, version 1 (SYSV), statically linked, 
 # Go BuildID=4Ec3fj_EKdvh_u8K3RGJ/JIKOgYFXTJ9LzGROhs8n/uC9gpeaM9MaYurh9DJiN/YcvB8Jc2ivQM2zUSHMhg, stripped
-file /home/<your-user>/go/bin/junod
+file $(which junod)
 ```
 
 ### Step 2: prep cosmovisor upgrade
