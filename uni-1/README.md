@@ -36,7 +36,7 @@ Once you have deleted the old stuff, your cosmovisor should look like:
 
 ```bash
 sha256sum ~/.juno/config/genesis.json
-# TBC
+# 5276db519e92dc627b5586571721e621382dbbe07425bb75072dcaea23bfccd5
 ```
 
 **junod version**
@@ -52,7 +52,9 @@ build_tags: netgo muslc, # THIS BIT IS KEY
 
 **Seed nodes**
 
-N/A
+```
+98daa8308d2eb807e9419b98286191ab14509152@juno-uni.seed.rhinostake.com:26656
+```
 
 **Persistent Peers**
 
