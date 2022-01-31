@@ -4,6 +4,8 @@ It's time to bring the-frey's blood pressure down and banish those night terrors
 
 This also means you don't have to use the patched binary supplied by the core team - you can build this update yourself.
 
+More info on the updates in this change can be found [on the release page](https://github.com/CosmosContracts/juno/releases/tag/v2.3.0-alpha.1).
+
 The Upgrade is scheduled for block `X`, which should be about _XPM UTC on X_.
 
 For unattended updates, [cosmovisor is your friend](https://docs.junochain.com/validators/setting-up-cosmovisor).
