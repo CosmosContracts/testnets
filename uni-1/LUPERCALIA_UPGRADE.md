@@ -6,7 +6,7 @@ This also means you don't have to use the patched binary supplied by the core te
 
 More info on the updates in this change can be found [on the release page](https://github.com/CosmosContracts/juno/releases/tag/v2.3.0-alpha.1).
 
-The Upgrade is scheduled for block `X`, which should be about _XPM UTC on X_.
+The Upgrade is scheduled for block `364000`, which should be about _1700 UTC on 2nd February 2022_.
 
 For unattended updates, [cosmovisor is your friend](https://docs.junochain.com/validators/setting-up-cosmovisor).
 
@@ -22,7 +22,7 @@ junod version
 
 # if you are using cosmovisor you then need to make a new dir and copy this new binary
 mkdir -p $DAEMON_HOME/cosmovisor/upgrades/lupercalia/bin
-cp /home/<your-user>/go/bin/junod $DAEMON_HOME/cosmovisor/upgrades/Lupercalia/bin
+cp /home/<your-user>/go/bin/junod $DAEMON_HOME/cosmovisor/upgrades/lupercalia/bin
 
 # find out what version you are about to run - should be v2.3.0-alpha.1
 .juno/cosmovisor/upgrades/lupercalia/bin/junod version
