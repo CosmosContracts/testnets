@@ -25,7 +25,7 @@ mkdir -p $DAEMON_HOME/cosmovisor/upgrades/lupercalia/bin
 cp /home/<your-user>/go/bin/junod $DAEMON_HOME/cosmovisor/upgrades/lupercalia/bin
 
 # find out what version you are about to run - should be v2.3.0-alpha.1
-.juno/cosmovisor/upgrades/lupercalia/bin/junod version
+$DAEMON_HOME/cosmovisor/upgrades/lupercalia/bin/junod version
 ```
 
 The chain will automatically halt at the target height, at which point you can manually replace the binary.
