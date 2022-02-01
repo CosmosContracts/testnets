@@ -22,7 +22,7 @@ junod version
 
 # if you are using cosmovisor you then need to make a new dir and copy this new binary
 mkdir -p $DAEMON_HOME/cosmovisor/upgrades/lupercalia/bin
-cp /home/<your-user>/go/bin/junod $DAEMON_HOME/cosmovisor/upgrades/lupercalia/bin
+cp $HOME/go/bin/junod $DAEMON_HOME/cosmovisor/upgrades/lupercalia/bin
 
 # find out what version you are about to run - should be v2.3.0-alpha.2
 $DAEMON_HOME/cosmovisor/upgrades/lupercalia/bin/junod version
