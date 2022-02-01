@@ -13,18 +13,18 @@ For unattended updates, [cosmovisor is your friend](https://docs.junochain.com/v
 ```bash
 # get the new version
 git checkout main && git pull
-git checkout v2.3.0-alpha.1
+git checkout v2.3.0-alpha.2
 make build && make install
 
-# check the version - should be v2.3.0-alpha.1
-# junod version --long will be commit 247625365273c071712921d64cdabb30240a1625
+# check the version - should be v2.3.0-alpha.2
+# junod version --long will be commit 7ec1d742f5e598c2455adb772c15cdfbdcf1bb9b
 junod version
 
 # if you are using cosmovisor you then need to make a new dir and copy this new binary
 mkdir -p $DAEMON_HOME/cosmovisor/upgrades/lupercalia/bin
 cp /home/<your-user>/go/bin/junod $DAEMON_HOME/cosmovisor/upgrades/lupercalia/bin
 
-# find out what version you are about to run - should be v2.3.0-alpha.1
+# find out what version you are about to run - should be v2.3.0-alpha.2
 $DAEMON_HOME/cosmovisor/upgrades/lupercalia/bin/junod version
 ```
 
