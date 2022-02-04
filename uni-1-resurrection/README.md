@@ -10,11 +10,12 @@ It is important to note that as we are simply restarting `uni-1` that the testne
 2. Reset `junod unsafe-reset-all`
 3. Remove genesis `rm .juno/config/genesis.json`
 4. Remove gentxs `rm -r .juno/config/gentx/`
-5. If you are using cosmovisor, remove symlink: `rm .juno/cosmovisor/current`
-6. Remove & recreate upgrades dir: `rm -r .juno/cosmovisor/upgrades/ && mkdir -p .juno/cosmovisor/upgrades`
-7. Check genesis bin is `v2.1.0`: `$DAEMON_HOME/cosmovisor/genesis/bin/junod version`
-8. Remove `seeds` and `persistent_peers` entries in `config.toml` - people will post their peer on discord before genesis
-9. Download the genesis from this folder as instructed below
+5. Ensure wasm dir is removed: `rm -r .juno/data/wasm`
+6. If you are using cosmovisor, remove symlink: `rm .juno/cosmovisor/current`
+7. Remove & recreate upgrades dir: `rm -r .juno/cosmovisor/upgrades/ && mkdir -p .juno/cosmovisor/upgrades`
+8. Check genesis bin is `v2.1.0`: `$DAEMON_HOME/cosmovisor/genesis/bin/junod version`
+9. Remove `seeds` and `persistent_peers` entries in `config.toml` - people will post their peer on discord before genesis
+10. Download the genesis from this folder as instructed below
 
 Once you have deleted the old stuff, your cosmovisor should look like:
 
