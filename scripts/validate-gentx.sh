@@ -1,7 +1,7 @@
 #!/bin/sh
 JUNOD_HOME="/tmp/junod$(date +%s)"
 RANDOM_KEY="randomjunodvalidatorkey"
-CHAIN_ID=uni-1
+CHAIN_ID=uni-2
 DENOM=ujunox
 VALIDATOR_COINS=10000000000$DENOM
 MAXBOND=9000000000
