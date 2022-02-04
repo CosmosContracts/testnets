@@ -1,3 +1,10 @@
 #!/bin/sh
 
-junod add-genesis-account  10000000000ujunox
+junod add-genesis-account juno1w8cpaaljwrytquj86kvp9s72lvmddcc2s67c82 10000000000ujunox
+junod add-genesis-account juno13ps62n7k4lszhj6a3er2h9u99ve3kypf8levqk 10000000000ujunox
+junod add-genesis-account juno1jt9w26mpxxjsk63mvd4m2ynj0af09csl4naawd 10000000000ujunox
+junod add-genesis-account juno192p0qmgz6rsda5fdnrvd63cgyzk6y93x8w3re9 10000000000ujunox
+junod add-genesis-account juno1k9vc5s2r9pd4jjh8pmncedrvu4gnq6pea4pwfc 10000000000ujunox
+junod add-genesis-account juno19w2488ntfgpduzqq3sk4j5x387zynwkn9rn2x3 10000000000ujunox
+junod add-genesis-account juno1hcnx0rwy0fd0tgvgkmr0k6tkjd7wx7789gylp3 10000000000ujunox
+junod add-genesis-account juno1z8tvmvjes5wug59wcm87rszxn47mgd7rzw9qsh 10000000000ujunox
