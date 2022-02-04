@@ -81,7 +81,7 @@ You only need to do these steps if for some reason you need to repopulate your g
 which junod
 
 # put new binary there i.e. in path/to/juno
-wget https://github.com/CosmosContracts/juno/releases/download/v2.1.0/junod -O /home/<your-user>/go/bin/junod
+wget https://github.com/CosmosContracts/juno/releases/download/v2.1.0/junod -O $(which junod)
 
 # if you run this, you should see build_tags: netgo muslc,
 # if there is a permissions problem use chmod/chown to make sure it is executable
