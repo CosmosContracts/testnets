@@ -14,7 +14,7 @@ start="2021-10-11 01:00:00Z"
 stTime=$(date --date="$start" +%s)
 
 # Gentx End date
-end="2022-01-08 14:00:00Z"
+end="2022-02-04 21:00:00Z"
 # Compute the seconds since epoch for end date
 endTime=$(date --date="$end" +%s)
 
@@ -51,7 +51,7 @@ else
 
     git clone https://github.com/CosmosContracts/juno
     cd juno
-    git checkout v2.0.6
+    git checkout v2.1.0
     make build
     chmod +x ./bin/junod
 
