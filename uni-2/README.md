@@ -36,7 +36,7 @@ Once you have deleted the old stuff, your cosmovisor should look like:
 
 ```bash
 sha256sum ~/.juno/config/genesis.json
-# 5276db519e92dc627b5586571721e621382dbbe07425bb75072dcaea23bfccd5
+# TBC
 ```
 
 **junod version**
