@@ -10,7 +10,7 @@ It is important to note that as we are simply restarting `uni-1` that the testne
 2. Reset `junod unsafe-reset-all`
 3. Remove genesis `rm .juno/config/genesis.json`
 4. Remove gentxs `rm -r .juno/config/gentx/`
-5. Ensure wasm dir is removed: `rm -r .juno/data/wasm`
+5. Ensure wasm dir is removed: `rm -r .juno/data/wasm` (should have been removed by unsafe-reset anyway)
 6. If you are using cosmovisor, remove symlink: `rm .juno/cosmovisor/current`
 7. Remove & recreate upgrades dir: `rm -r .juno/cosmovisor/upgrades/ && mkdir -p .juno/cosmovisor/upgrades`
 8. Check genesis bin is `v2.1.0`: `$DAEMON_HOME/cosmovisor/genesis/bin/junod version`
@@ -39,13 +39,13 @@ Once you have deleted the old stuff, your cosmovisor should look like:
 
 ```bash
 sha256sum ~/.juno/config/genesis.json
-# 5276db519e92dc627b5586571721e621382dbbe07425bb75072dcaea23bfccd5
+# b9ddd6566e6fa1a01a249c09ff42d73bbdf975da8528e861cbbbb4f32e3a81d3
 ```
 
 **junod version**
 
 ```bash
-$ junod version --long
+$DAEMON_HOME/cosmovisor/genesis/bin/junod version version --long
 name: juno
 server_name: junod
 version: v2.1.0
@@ -56,7 +56,7 @@ build_tags: netgo muslc, # THIS BIT IS KEY
 **Seed nodes**
 
 ```
-98daa8308d2eb807e9419b98286191ab14509152@juno-uni.seed.rhinostake.com:26656
+TBC
 ```
 
 **Persistent Peers**
@@ -68,6 +68,8 @@ TBC
 #### Download and verify:
 
 Note, if you're reusing a box from `uni` you likely already have the correct binary. If you're using cosmovisor, you can simply follow the steps at the top of this page.
+
+You only need to do these steps if for some reason you need to repopulate your genesis binary, e.g. if you are not using cosmovisor.
 
 ```sh
 # find out where junod is - will likely be /home/<your-user>/go/bin/junod
