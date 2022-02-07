@@ -53,7 +53,7 @@ build_tags: netgo muslc, # THIS BIT IS KEY
 **Seed nodes**
 
 ```
-98daa8308d2eb807e9419b98286191ab14509152@juno-uni.seed.rhinostake.com:26656
+8c0ac9bf67ff8ea0b26e915f0dbb44497b8f4ac2@38.146.3.181:26656
 ```
 
 **Persistent Peers**
