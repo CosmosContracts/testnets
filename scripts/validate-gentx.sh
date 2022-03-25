@@ -1,7 +1,10 @@
-#!/bin/sh
+#!/bin/bash
+
+set -x 
+
 JUNOD_HOME="/tmp/junod$(date +%s)"
 RANDOM_KEY="randomjunodvalidatorkey"
-CHAIN_ID=uni-2
+CHAIN_ID=scottie-1
 DENOM=ujunox
 VALIDATOR_COINS=10000000000$DENOM
 MAXBOND=9000000000
@@ -14,7 +17,7 @@ start="2021-10-11 01:00:00Z"
 stTime=$(date --date="$start" +%s)
 
 # Gentx End date
-end="2022-02-04 21:00:00Z"
+end="2022-03-26 16:00:00Z"
 # Compute the seconds since epoch for end date
 endTime=$(date --date="$end" +%s)
 
@@ -61,7 +64,7 @@ else
 
     echo "..........Fetching genesis......."
     rm -rf $JUNOD_HOME/config/genesis.json
-    curl -s  https://raw.githubusercontent.com/CosmosContracts/testnets/main/$CHAIN_ID/pre-genesis.json > $JUNOD_HOME/config/genesis.json
+    cp ../$CHAIN_ID/pre-genesis.json $JUNOD_HOME/config/genesis.json
 
     # this genesis time is different from original genesis time, just for validating gentx.
     sed -i '/genesis_time/c\   \"genesis_time\" : \"2021-09-02T16:00:00Z\",' $JUNOD_HOME/config/genesis.json
