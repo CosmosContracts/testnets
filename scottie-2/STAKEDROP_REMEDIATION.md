@@ -25,7 +25,7 @@ This is the simplest scenario.
 #### Review
 
 1. We observe that the stakedrop remediated account has no balance
-1. We observe that the 0x0 address has a balance equal to the stakedrop remediation
+1. We observe that the Unity Prop Smart Contract address has a balance equal to the stakedrop remediation
 
 ### Scenario 2: Most Funds Remain Delegated, Some Funds Undelegate
 
@@ -47,7 +47,7 @@ This is a slight modification, but will test if the upgrade handler is handling 
 #### Review
 
 1. We observe that the stakedrop remediated account has no balance
-1. We observe that the 0x0 address has a balance equal to the stakedrop remediation
+1. We observe that the Unity Prop Smart Contract address has a balance equal to the stakedrop remediation
 
 ### Scenario 3: Most Funds Remain Delegated, Some Funds Redelegate
 
@@ -69,7 +69,7 @@ This is a slight modification, but will test if the upgrade handler is handling 
 #### Review
 
 1. We observe that the stakedrop remediated account has no balance
-1. We observe that the 0x0 address has a balance equal to the stakedrop remediation
+1. We observe that the Unity Prop Smart Contract address has a balance equal to the stakedrop remediation
 
 ## Next Steps
 
