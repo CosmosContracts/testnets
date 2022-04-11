@@ -10,6 +10,7 @@ VALIDATOR_COINS=10000000000$DENOM
 MAXBOND=9000000000
 GENTX_FILE=$(find ./$CHAIN_ID/gentx -iname "*.json")
 LEN_GENTX=$(echo ${#GENTX_FILE})
+JUNOD_TAG="v3.1.0"
 
 # Gentx Start date
 start="2021-10-11 01:00:00Z"
@@ -17,7 +18,7 @@ start="2021-10-11 01:00:00Z"
 stTime=$(date --date="$start" +%s)
 
 # Gentx End date
-end="2022-04-06 18:00:00Z"
+end="2022-04-12 18:00:00Z"
 # Compute the seconds since epoch for end date
 endTime=$(date --date="$end" +%s)
 
@@ -54,7 +55,7 @@ else
 
     git clone https://github.com/CosmosContracts/juno
     cd juno
-    git checkout v2.3.0
+    git checkout $JUNOD_TAG
     make build
     chmod +x ./bin/junod
 

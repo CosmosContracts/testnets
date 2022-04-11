@@ -6,6 +6,16 @@ It will be critical to make sure we can easily roll back to our genesis state an
 
 We have some time here, but we need to test at least three scenarios.
 
+High level, we need to test:
+
+```
+- withdrawal address: withdraw all funds
+
+- gov: send x funds to address
+- gov: send all funds to address
+- gov: burn all funds
+```
+
 ### Scenario 1: Funds Remain Delegated
 
 This is the simplest scenario.

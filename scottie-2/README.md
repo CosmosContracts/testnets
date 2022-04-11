@@ -1,6 +1,6 @@
 # Junø - scottie-2 Testnet
 
-This unincentivized testnet will start at the lupercalia version of juno, `v2.3.0`.
+This unincentivized testnet will start at the lupercalia version of juno, `v3.1.0.
 
 Once the genesis network is up and running, we'll begin following [Stakedrop Remediation](STAKEDROP_REMEDIATION.md) to move funds to an instantiated smart contract.
 
@@ -11,7 +11,7 @@ Once the genesis network is up and running, we'll begin following [Stakedrop Rem
 3. Remove genesis `rm .juno/config/genesis.json`
 4. Remove gentxs `rm -r .juno/config/gentx/`
 5. If you are using cosmovisor, remove symlink: `rm .juno/cosmovisor/current`
-6. Check genesis bin is `v2.3.0`: `$DAEMON_HOME/cosmovisor/genesis/bin/junod version`
+6. Check genesis bin is `v3.1.0`: `$DAEMON_HOME/cosmovisor/genesis/bin/junod version`
 7. Follow generate gentx as normal below
 
 ## Setup
@@ -50,7 +50,7 @@ source .profile
 ```sh
 git clone https://github.com/CosmosContracts/juno
 cd juno
-git checkout v2.3.0
+git checkout v3.1.0
 make build && make install
 ```
 
@@ -60,8 +60,8 @@ Check that you have the right Juno version installed:
 $ junod version --long
 name: juno
 server_name: junod
-version: v2.3.0
-commit: cfd9b5834bec2bed1ea0fb6a39af787797e4e4ec
+version: v3.1.0
+commit: dd595e9ec533eabed8a7b588c64e2cc638fbf24e
 build_tags: netgo,ledger
 ```
 
@@ -195,8 +195,8 @@ sha256sum "${HOME}/.juno/config/genesis.json"
 $ junod version --long
 name: juno
 server_name: junod
-version: v2.3.0
-commit: cfd9b5834bec2bed1ea0fb6a39af787797e4e4ec
+version: v3.1.0
+commit: dd595e9ec533eabed8a7b588c64e2cc638fbf24e
 build_tags: netgo,ledger
 ```
 
