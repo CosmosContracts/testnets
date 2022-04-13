@@ -4,12 +4,13 @@ set -x
 
 JUNOD_HOME="/tmp/junod$(date +%s)"
 RANDOM_KEY="randomjunodvalidatorkey"
-CHAIN_ID=scottie-1
+CHAIN_ID=scottie-2
 DENOM=ujunox
 VALIDATOR_COINS=10000000000$DENOM
 MAXBOND=9000000000
 GENTX_FILE=$(find ./$CHAIN_ID/gentx -iname "*.json")
 LEN_GENTX=$(echo ${#GENTX_FILE})
+JUNOD_TAG="v3.1.0"
 
 # Gentx Start date
 start="2021-10-11 01:00:00Z"
@@ -17,7 +18,7 @@ start="2021-10-11 01:00:00Z"
 stTime=$(date --date="$start" +%s)
 
 # Gentx End date
-end="2022-03-26 16:00:00Z"
+end="2022-04-13 20:00:00Z"
 # Compute the seconds since epoch for end date
 endTime=$(date --date="$end" +%s)
 
@@ -54,7 +55,7 @@ else
 
     git clone https://github.com/CosmosContracts/juno
     cd juno
-    git checkout v2.1.0
+    git checkout $JUNOD_TAG
     make build
     chmod +x ./bin/junod
 
