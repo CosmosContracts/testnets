@@ -1,6 +1,6 @@
 # Junø - scottie-2 Testnet
 
-This unincentivized testnet will start at the lupercalia version of juno, `v3.1.0.
+This unincentivized testnet will start at the lupercalia version of juno, `v3.1.0.`
 
 Once the genesis network is up and running, we'll begin following [Stakedrop Remediation](STAKEDROP_REMEDIATION.md) to move funds to an instantiated smart contract.
 
@@ -186,7 +186,7 @@ journalctl -u junod -f
 
 ```bash
 sha256sum "${HOME}/.juno/config/genesis.json"
-# TBD
+90dcbc3b1ed2ddb1c4fe50c400edb56b02e88ab9916dc3aedc73d3ec79bfc772
 ```
 
 **junod version**
