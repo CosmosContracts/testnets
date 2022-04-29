@@ -165,7 +165,7 @@ If all goes well, you will see a message similar to the following:
 Genesis transaction written to "/home/user/.juno/config/gentx/gentx-******.json"
 ```
 
-5. Change minimum gas prices in `app.toml` to `0.025ujunox`.
+5. Change minimum gas prices in `app.toml` to `0.0025ujunox`.
 
 ### Submit genesis transaction
 
