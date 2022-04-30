@@ -12,7 +12,7 @@ This is a throwaway handler - for mainnet we will use the Unity handler.
 
 More info on the updates in this change can be found [on the release page](https://github.com/CosmosContracts/juno/releases/tag/v4.0.0-beta).
 
-The Upgrade is scheduled for block `TBD`, which should be about _TBD_.
+The Upgrade is scheduled for block `1291500`, which should be about 05/01/2022 1600 UTC.
 
 For unattended updates, [cosmovisor is your friend](https://docs.junochain.com/validators/setting-up-cosmovisor).
 
