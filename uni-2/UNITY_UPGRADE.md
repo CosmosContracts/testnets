@@ -5,7 +5,7 @@ It's time to test the Unity candidate.
 If you've not voted yet, please vote on the software upgrade:
 
 ```sh
-junod tx gov vote TBD yes --fees 5000ujunox --gas auto --chain-id uni-2 -y --from <key>
+junod tx gov vote 4 yes --fees 5000ujunox --gas auto --chain-id uni-2 -y --from <key>
 ```
 
 This is a throwaway handler - for mainnet we will use the Unity handler.
