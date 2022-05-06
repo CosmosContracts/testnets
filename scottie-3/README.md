@@ -2,7 +2,7 @@
 
 This unincentivized testnet will start at the unity version of juno, `v4.0.0`
 
-Once the genesis network is up and running, we'll begin following [Stakedrop Remediation](STAKEDROP_REMEDIATION.md) to move funds to an instantiated smart contract.
+Once the genesis network is up and running, we'll test the veritas upgrade to `v5.0.0` to move funds to the unity Smart Contract
 
 ## If you are reusing a testnet box, do this first
 
