@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# Simulates an account receiving an excess of stakedrop
+junod add-genesis-account juno1ep4unl6pdet64ph43sqhxd9hvftdmealqmzrze 500000000000ujunox
+
+junod add-genesis-account juno1w8cpaaljwrytquj86kvp9s72lvmddcc2s67c82 10000000000ujunox
+junod add-genesis-account juno17al57r9kkvdp2ep4peec3270jd3rnj3h238g99 10000000000ujunox
+junod add-genesis-account juno1jt9w26mpxxjsk63mvd4m2ynj0af09csl4naawd 10000000000ujunox
+junod add-genesis-account juno1xwazl8ftks4gn00y5x3c47auquc62ssune9ppv 10000000000ujunox
