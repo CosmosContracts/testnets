@@ -1,6 +1,7 @@
 #!/bin/sh
 JUNOD_HOME="/tmp/junod$(date +%s)"
-CHAIN_ID=astarte
+CHAIN_ID=uni-3
+JUNOD_TAG="v6.0.0"
 
 set -e
 
@@ -8,7 +9,7 @@ echo "...........Init Juno.............."
 
 git clone https://github.com/CosmosContracts/Juno
 cd Juno
-git checkout v1.0.0
+git checkout $JUNOD_TAG
 make build
 chmod +x ./build/junod
 
@@ -16,7 +17,7 @@ chmod +x ./build/junod
 
 echo "..........Fetching genesis......."
 rm -rf $JUNOD_HOME/config/genesis.json
-cp ../$CHAIN_ID/genesis-prelaunch.json $JUNOD_HOME/config/genesis.json
+cp ../$CHAIN_ID/pre-genesis.json $JUNOD_HOME/config/genesis.json
 
 echo "..........Collecting gentxs......."
 ./build/junod collect-gentxs --home $JUNOD_HOME --gentx-dir ../$CHAIN_ID/gentxs
