@@ -5,12 +5,14 @@ This unincentivized testnet will start at the patched x/wasm 0.27 version of jun
 ## If you are reusing a testnet box, do this first
 
 1. Stop your node
-2. Reset `junod unsafe-reset-all`
-3. Remove genesis `rm .juno/config/genesis.json`
-4. Remove gentxs `rm -r .juno/config/gentx/`
-5. If you are using cosmovisor, remove symlink: `rm .juno/cosmovisor/current`
-6. Check genesis bin is `v6.0.0`: `$DAEMON_HOME/cosmovisor/genesis/bin/junod version`
-7. Follow generate gentx as normal below
+2. Build `v6.0.0` tag of `junod`
+3. Reset using `junod unsafe-reset-all` or `junod tendermint unsafe-reset-all` (you might need `--home $HOME/.juno` as well)
+4. Remove genesis `rm $HOME/.juno/config/genesis.json`
+5. Remove gentxs `rm -r $HOME/.juno/config/gentx/`
+6. If you are using cosmovisor, remove symlink: `rm $HOME/.juno/cosmovisor/current`
+7. Move `junod` to genesis bin: `cp $HOME/go/bin/junod $DAEMON_HOME/cosmovisor/genesis/bin`
+8. Check genesis bin is `v6.0.0`: `$DAEMON_HOME/cosmovisor/genesis/bin/junod version`
+9. Follow generate gentx as normal below
 
 ## Setup
 
