@@ -10,9 +10,11 @@ This unincentivized testnet will start at the patched x/wasm 0.27 version of jun
 4. Remove genesis `rm $HOME/.juno/config/genesis.json`
 5. Remove gentxs `rm -r $HOME/.juno/config/gentx/`
 6. If you are using cosmovisor, remove symlink: `rm $HOME/.juno/cosmovisor/current`
-7. Move `junod` to genesis bin: `cp $HOME/go/bin/junod $DAEMON_HOME/cosmovisor/genesis/bin`
-8. Check genesis bin is `v6.0.0`: `$DAEMON_HOME/cosmovisor/genesis/bin/junod version`
-9. Follow generate gentx as normal below
+7. Then remove upgrades dir `rm -r $HOME/.juno/cosmovisor/upgrades && mkdir $HOME/.juno/cosmovisor/upgrades`
+8. Move `junod` to genesis bin: `cp $HOME/go/bin/junod $DAEMON_HOME/cosmovisor/genesis/bin`
+9. Remove any `upgrade-info` file in the `data` dir: `rm $HOME/.juno/data/upgrade-info.json`
+10. Check genesis bin is `v6.0.0`: `$DAEMON_HOME/cosmovisor/genesis/bin/junod version`
+11. Follow generate gentx as normal below
 
 ## Setup
 
@@ -186,7 +188,7 @@ journalctl -u junod -f
 
 ```bash
 sha256sum "${HOME}/.juno/config/genesis.json"
-# TBD
+# 8b1e60e938d5aa1b2987b5f10aff7bdf9e24b1f389b10e277a58461bc574aa7c
 ```
 
 **junod version**
@@ -209,7 +211,7 @@ TBD
 **Persistent Peers**
 
 ```
-TBD
+ddaa333eba3d8ac43249dcd59451aad28f190d70@162.55.128.249:36656,f79ce2fab55e56b408d76ddcbc1c82c1a90e315b@172.31.44.248:26656
 ```
 
 ### Learn more
