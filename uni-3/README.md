@@ -6,7 +6,7 @@ This unincentivized testnet will start at the patched x/wasm 0.27 version of jun
 
 1. Stop your node
 2. Build `v6.0.0` tag of `junod`
-3. Reset using `junod unsafe-reset-all` or `junod tendermint unsafe-reset-all` (you might need `--home $HOME/.juno` as well)
+3. Reset using `junod unsafe-reset-all` or `junod tendermint unsafe-reset-all --home ~/.juno` (the `--home` flag is required)
 4. Remove genesis `rm $HOME/.juno/config/genesis.json`
 5. Remove gentxs `rm -r $HOME/.juno/config/gentx/`
 6. If you are using cosmovisor, remove symlink: `rm $HOME/.juno/cosmovisor/current`
