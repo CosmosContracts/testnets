@@ -8,7 +8,7 @@ If you've not voted yet, please vote on the software upgrade:
 
 More info on the updates in this change can be found [on the release page](https://github.com/CosmosContracts/juno/releases/tag/v7.0.0-beta).
 
-The Upgrade is scheduled for block `XXX`, which should be about _1700 UTC on 23rd June 2022_.
+The Upgrade is scheduled for block `459000`, which should be about _1700 UTC on 23rd June 2022_. [Here's a countdown](https://testnet.mintscan.io/juno-testnet/blocks/459000).
 
 For unattended updates, [cosmovisor is your friend](https://docs.junochain.com/validators/setting-up-cosmovisor).
 
