@@ -6,7 +6,7 @@ Among the crucial changes is an upgrade to `wasmvm v1.1.0` which will support [C
 
 If you've not voted yet, please vote:
 
-    junod tx gov vote 4 yes --gas-prices 0.1ujunox --gas-adjustment 1.3 --gas auto --chain-id uni-3 -y --from <key> -b block
+    junod tx gov vote 6 yes --gas-prices 0.1ujunox --gas-adjustment 1.3 --gas auto --chain-id uni-3 -y --from <key> -b block
 
 More info on the changes in this proposed release can be found [on the release page](https://github.com/CosmosContracts/juno/releases/tag/v10.0.0-alpha).
 
