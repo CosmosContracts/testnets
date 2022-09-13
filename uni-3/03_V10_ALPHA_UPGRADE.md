@@ -10,7 +10,7 @@ If you've not voted yet, please vote:
 
 More info on the changes in this proposed release can be found [on the release page](https://github.com/CosmosContracts/juno/releases/tag/v10.0.0-alpha).
 
-The Upgrade is scheduled for block `X`, which should be about _1700 UTC on 15th Sept 2022_. [Here's a countdown](https://testnet.mintscan.io/juno-testnet/blocks/X).
+The Upgrade is scheduled for block `1743818`, which should be about _1700 UTC on 15th Sept 2022_. [Here's a countdown](https://testnet.mintscan.io/juno-testnet/blocks/1743818).
 
 For unattended updates, [cosmovisor is your friend](https://docs.junochain.com/validators/setting-up-cosmovisor).
 
