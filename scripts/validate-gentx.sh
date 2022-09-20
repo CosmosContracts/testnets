@@ -4,13 +4,13 @@ set -x
 
 JUNOD_HOME="/tmp/junod$(date +%s)"
 RANDOM_KEY="randomjunodvalidatorkey"
-CHAIN_ID=uni-3
+CHAIN_ID=uni-4
 DENOM=ujunox
 VALIDATOR_COINS=10000000000$DENOM
 MAXBOND=9000000000
 GENTX_FILE=$(find ./$CHAIN_ID/gentx -iname "*.json")
 LEN_GENTX=$(echo ${#GENTX_FILE})
-JUNOD_TAG="v6.0.0"
+JUNOD_TAG="v9.0.0"
 
 # Gentx Start date
 start="2021-10-11 01:00:00Z"
@@ -18,7 +18,7 @@ start="2021-10-11 01:00:00Z"
 stTime=$(date --date="$start" +%s)
 
 # Gentx End date
-end="2022-05-22 17:00:00Z"
+end="2022-09-22 09:00:00Z"
 # Compute the seconds since epoch for end date
 endTime=$(date --date="$end" +%s)
 
@@ -96,13 +96,6 @@ else
         done
 
     mkdir -p $JUNOD_HOME/config/gentx/
-
-    # # add junod validator so it can start
-    # ./bin/junod add-genesis-account $RANDOM_KEY 100000000000000$DENOM --home $JUNOD_HOME \
-    #     --keyring-backend test
-    # #submit a gentx
-    # ./bin/junod gentx $RANDOM_KEY 90000000000000$DENOM --home $JUNOD_HOME \
-    #     --keyring-backend test --chain-id $CHAIN_ID
 
     # add submitted gentxs
     cp -r ../$CHAIN_ID/gentx/* $JUNOD_HOME/config/gentx/
