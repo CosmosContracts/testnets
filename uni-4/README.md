@@ -105,7 +105,7 @@ If all goes well, you will see a message similar to the following:
 Genesis transaction written to "${HOME}/.juno/config/gentx/gentx-******.json"
 ```
 
-5. Change minimum gas prices in `app.toml` to `0.025ujunox`.
+5. Change minimum gas prices in `app.toml` to `0.0025ujunox`.
 
 ### Submit genesis transaction
 
@@ -117,7 +117,7 @@ Genesis transaction written to "${HOME}/.juno/config/gentx/gentx-******.json"
   git clone https://github.com/<your-github-username>/testnets
   ```
 
-- Copy the generated gentx json file to `<repo_path>/uni-4/gentx/`
+- Copy the generated gentx json file to `<repo_path>/uni-4/gentx/`. If you want, rename it to `<your-validator-moniker>.json` so it's easier to identify.
 
   ```sh
   > cd testnets
@@ -130,7 +130,7 @@ Genesis transaction written to "${HOME}/.juno/config/gentx/gentx-******.json"
 
 #### Running in production
 
-**Note, we'll be going through some upgrades for this testnet. Consider using [Cosmovisor](https://github.com/cosmos/cosmos-sdk/tree/master/cosmovisor) to make your life easier.** Setting up Cosmovisor is covered in the [Juno Documentation](https://docs.junochain.com/validators/setting-up-cosmovisor).
+**Note, as usual we'll be going through some upgrades for this testnet. Consider using [Cosmovisor](https://github.com/cosmos/cosmos-sdk/tree/master/cosmovisor) to make your life easier.** Setting up Cosmovisor is covered in the [Juno Documentation](https://docs.junochain.com/validators/setting-up-cosmovisor).
 
 Download Genesis file when the time is right. Put it in your `${HOME}/.juno` folder.
 
