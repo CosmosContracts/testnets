@@ -18,7 +18,7 @@ start="2021-10-11 01:00:00Z"
 stTime=$(date --date="$start" +%s)
 
 # Gentx End date
-end="2022-08-23 13:00:00Z"
+end="2022-09-22 09:00:00Z"
 # Compute the seconds since epoch for end date
 endTime=$(date --date="$end" +%s)
 
@@ -96,13 +96,6 @@ else
         done
 
     mkdir -p $JUNOD_HOME/config/gentx/
-
-    # # add junod validator so it can start
-    # ./bin/junod add-genesis-account $RANDOM_KEY 100000000000000$DENOM --home $JUNOD_HOME \
-    #     --keyring-backend test
-    # #submit a gentx
-    # ./bin/junod gentx $RANDOM_KEY 90000000000000$DENOM --home $JUNOD_HOME \
-    #     --keyring-backend test --chain-id $CHAIN_ID
 
     # add submitted gentxs
     cp -r ../$CHAIN_ID/gentx/* $JUNOD_HOME/config/gentx/
