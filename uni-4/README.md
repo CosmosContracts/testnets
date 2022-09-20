@@ -78,7 +78,7 @@ Below are the instructions to generate & submit your genesis transaction
 1. Initialize the Juno directories and create the local genesis file with the correct chain-id:
 
 ```bash
-junod init <moniker-name> --chain-id=uni-3
+junod init <moniker-name> --chain-id=uni-4
 ```
 
 2. Create a local key pair (skip this step if you already have a key):
@@ -96,7 +96,7 @@ junod add-genesis-account $(junod keys show <key-name> -a) 10000000000ujunox
 4. Create the gentx, use only `9000000000ujunox`:
 
 ```bash
-junod gentx <key-name> 9000000000ujunox --chain-id=uni-3
+junod gentx <key-name> 9000000000ujunox --chain-id=uni-4
 ```
 
 If all goes well, you will see a message similar to the following:
@@ -117,11 +117,11 @@ Genesis transaction written to "${HOME}/.juno/config/gentx/gentx-******.json"
   git clone https://github.com/<your-github-username>/testnets
   ```
 
-- Copy the generated gentx json file to `<repo_path>/uni-3/gentx/`
+- Copy the generated gentx json file to `<repo_path>/uni-4/gentx/`
 
   ```sh
   > cd testnets
-  > cp "${HOME}/.juno/config/gentx/gentx*.json" ./uni-3/gentx/
+  > cp "${HOME}/.juno/config/gentx/gentx*.json" ./uni-4/gentx/
   ```
 
 - Commit and push to your repo
@@ -180,10 +180,10 @@ journalctl -u junod -f
 
 **Genesis File**
 
-[Genesis File](/uni-3/genesis.json):
+[Genesis File](/uni-4/genesis.json):
 
 ```bash
-   curl -s  https://raw.githubusercontent.com/CosmosContracts/testnets/main/uni-3/genesis.json > ~/.juno/config/genesis.json
+   curl -s  https://raw.githubusercontent.com/CosmosContracts/testnets/main/uni-4/genesis.json > ~/.juno/config/genesis.json
 ```
 
 **Genesis sha256**
