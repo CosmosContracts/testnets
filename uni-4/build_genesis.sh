@@ -1,5 +1,10 @@
 #!/bin/sh
 
+# clear any gentxs that already exist
+echo "> Cleaning old files..."
+rm -r $HOME/.juno/config/gentx
+rm $HOME/.juno/config/genesis.json
+
 set -e
 
 # You will need Juno set up on your machine to run this

@@ -6,7 +6,7 @@ If you're interested in earning more Juno, check out [Hack Juno](https://github.
 
 ## Current testnet
 
-The current testnet is `uni-3` - check out the [README in the folder](/uni-2/README.md) to get started.
+The current testnet is `uni-4` - check out the [README in the folder](/uni-2/README.md) to get started.
 
 ### Learn more
 
