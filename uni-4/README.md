@@ -16,7 +16,8 @@ The faucet will be patched to have a large sum of fake USDC, usdcx.
 8. Move `junod` to genesis bin: `cp $HOME/go/bin/junod $DAEMON_HOME/cosmovisor/genesis/bin`
 9. Remove any `upgrade-info` file in the `data` dir: `rm $HOME/.juno/data/upgrade-info.json`
 10. Check genesis bin is `v9.0.0`: `$DAEMON_HOME/cosmovisor/genesis/bin/junod version`
-11. Follow generate gentx as normal below
+11. If statesync is enabled in your config, turn it off
+12. Follow generate gentx as normal below
 
 ## Setup
 
