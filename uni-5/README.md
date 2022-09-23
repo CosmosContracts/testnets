@@ -19,6 +19,14 @@ The faucet will be patched to have a large sum of fake USDC, usdcx.
 11. If statesync is enabled in your config, turn it off
 12. Follow generate gentx as normal below
 
+If you are using a remote signer (TMKMS) you will also need to:
+
+1. Stop the chain's signing process on the signer box
+2. Update chain id in that chain's config file
+3. Open the chain id's configured consensus.json and put `0` for `height`, `round` and `step`.
+4. Copy the `priv_validator_key.json` you used on the signer box to whatever box you use to generate the gentx, before generating it
+5. Restart the chain's signer process on the signer box before network genesis
+
 ## Setup
 
 **Prerequisites:** Make sure to have [Golang >=1.18](https://golang.org/).
