@@ -32,12 +32,12 @@ make build && make install
 
 # check the version - should be v11.0.0-alpha
 # junod version --long will be commit b27fc7d9312267b293d3355dd4a06523d76e247f
-junod version
+junod version --long | head -n 4
 
 # if you are using cosmovisor you then need to make a new dir and copy this new binary
 mkdir -p $DAEMON_HOME/cosmovisor/upgrades/v11/bin
 cp $HOME/go/bin/junod $DAEMON_HOME/cosmovisor/upgrades/v11/bin
 
 # find out what version you are about to run - should be v11.0.0-alpha
-$DAEMON_HOME/cosmovisor/upgrades/v11/bin/junod version
+$DAEMON_HOME/cosmovisor/upgrades/v11/bin/junod version --long | head -n 4
 ```
