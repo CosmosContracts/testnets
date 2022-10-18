@@ -20,7 +20,7 @@ If you've not voted yet, please vote:
 
 More info on the changes in this proposed release can be found [on the release page](https://github.com/CosmosContracts/juno/releases/tag/v11.0.0-alpha).
 
-The Upgrade is scheduled for block `X`, which should be about _Y UTC on Z_. [Here's a countdown](https://testnet.mintscan.io/juno-testnet/blocks/20000).
+The Upgrade is scheduled for block `410200`, which should be about _1700 UTC on Thursday 20th October_. [Here's a countdown](https://testnet.mintscan.io/juno-testnet/blocks/410200).
 
 For unattended updates, [cosmovisor is your friend](https://docs.junochain.com/validators/setting-up-cosmovisor).
 
