@@ -24,7 +24,7 @@ Update the oracle config in `$HOME/.juno/oracle-config.toml`
 
     nano $HOME/.juno/oracle-config.toml
 
-Set the address (feeder address) and validator (valoper address). Note that the feeder address will need access to this wallet, so creating a new one with keyring set to test is the best strategy.
+Set fee to `0ujunox`. Then set the address (feeder address) and validator (valoper address). Note that the feeder address will need access to this wallet, so creating a new one with keyring set to test is the best strategy. You will need to send it 1JUNOX but after that it should be free based on the fee config noted.
 
 You can do this configuration using sed, if you're into that:
 
@@ -33,7 +33,7 @@ FEEDER_ADDR=<feeder-addr>
 VALOPER_ADDR=<your-valoper-address>
 CHAIN_ID=uni-5
 sed -i \
- 's/0.0001stake/0.025ujuno/g;
+ 's/0.0001stake/0ujunox/g;
  s/address = "juno1w20tfhnehc33rgtm9tg8gdtea0svn7twfnyqee"/address = "'"$FEEDER_ADDR"'"/g;
  s/validator = "junovaloper1w20tfhnehc33rgtm9tg8gdtea0svn7twkwj0zq"/validator = "'"$VALOPER_ADDR"'"/g;
  s/chain_id = "test-1"/chain_id = "'"$CHAIN_ID"'"/g;
