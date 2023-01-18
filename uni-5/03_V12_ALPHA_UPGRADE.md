@@ -20,6 +20,14 @@ price-feeder version # sdk: v0.45.11 and go1.19.*
 # If it is not found, your go path is not set
 ```
 
+Edit your juno home (~/.juno/config/app.toml) app.toml to be 0 fees for any denoms set which will take effect next restart.
+minimum-gas-prices = "0ujunox"
+
+Next, create a new price feeder account in the test keyring. This account will need to be sent 1 JUNOX _(1000000ujunox)_. This can be done before or after the upgrade takes place
+
+junod keys add feeder --keyring-backend test
+junod tx bank send <validator> <feeder-address> 1000000ujunox --chain-id uni-5 --fees 500ujunox
+
 Update the oracle config in `$HOME/.juno/oracle-config.toml`
 
     nano $HOME/.juno/oracle-config.toml
