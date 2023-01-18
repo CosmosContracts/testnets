@@ -20,23 +20,23 @@ price-feeder version # sdk: v0.45.11 and go1.19.*
 # If it is not found, your go path is not set
 ```
 
-Edit your juno home (~/.juno/config/app.toml) app.toml to be 0 fees for any denoms set which will take effect next restart.
-minimum-gas-prices = "0ujunox"
+Edit your juno config in the app file (`~/.juno/config/app.toml`) to be 0 fees for any denoms set. This will take effect next restart.
 
-Next, create a new price feeder account in the test keyring. This account will need to be sent 1 JUNOX _(1000000ujunox)_. This can be done before or after the upgrade takes place
 
+    minimum-gas-prices = "0ujunox"
+
+Next, create a new price feeder account using the test keyring. This account will need to be sent 1 JUNOX _(1000000ujunox)_. This can be done before or after the upgrade takes place.
+
+```sh
 junod keys add feeder --keyring-backend test
-junod tx bank send <validator> <feeder-address> 1000000ujunox --chain-id uni-5 --fees 500ujunox
+junod tx bank send <validator> <feeder-address> 1000000ujunox --chain-id uni-5 --gas-prices 0.1ujunox --gas-adjustment 1.3 --gas auto
+```
 
 Update the oracle config in `$HOME/.juno/oracle-config.toml`
 
     nano $HOME/.juno/oracle-config.toml
 
-Set the gas_price to `0ujunox`. Then set the address you created (feeder address) and validator (valoper address). Once the chain is back online you must to do the following:
-
-junod tx bank send <validator_key> <feeder_addr> 1000000ujunox  --chain-id uni-5 --fees 500ujunox
-&
-junod tx oracle set-feeder <feeder_addr> --from <validator_key>  --chain-id uni-5 --fees 500ujunox
+Set the gas_price to `0ujunox`. Then set the address you created (feeder address) and validator (valoper address).
 
 You can do this configuration using sed, if you're into that:
 
@@ -84,6 +84,13 @@ Enable like so:
 sudo systemctl daemon-reload
 sudo systemctl enable oracle
 sudo systemctl start oracle
+```
+
+Once the chain is back online you must do the following:
+
+```sh
+junod tx bank send <validator_key> <feeder_addr> 1000000ujunox  --chain-id uni-5 --gas-prices 0.1ujunox --gas-adjustment 1.3 --gas auto
+junod tx oracle set-feeder <feeder_addr> --from <validator_key>  --chain-id uni-5 --gas-prices 0.1ujunox --gas-adjustment 1.3 --gas auto
 ```
 
 If you've not voted yet, please vote:
