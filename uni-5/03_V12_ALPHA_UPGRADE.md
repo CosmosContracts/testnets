@@ -24,7 +24,11 @@ Update the oracle config in `$HOME/.juno/oracle-config.toml`
 
     nano $HOME/.juno/oracle-config.toml
 
-Set fee to `0ujunox`. Then set the address (feeder address) and validator (valoper address). Note that the feeder address will need access to this wallet, so creating a new one with keyring set to test is the best strategy. You will need to send it 1JUNOX but after that it should be free based on the fee config noted.
+Set the gas_price to `0ujunox`. Then set the address you created (feeder address) and validator (valoper address). Once the chain is back online you must to do the following:
+
+junod tx bank send <validator_key> <feeder_addr> 1000000ujunox  --chain-id uni-5 --fees 500ujunox
+&
+junod tx oracle set-feeder <feeder_addr> --from <validator_key>  --chain-id uni-5 --fees 500ujunox
 
 You can do this configuration using sed, if you're into that:
 
