@@ -2,7 +2,7 @@
 
 It's time to test Juno v12. Note that this upgrade introduces an oracle and price feeder, and these must now be run.
 
-To install:
+## Price Feeder Install
 
 ```sh
 cd ~
@@ -20,10 +20,13 @@ price-feeder version # sdk: v0.45.11 and go1.19.*
 # If it is not found, your go path is not set
 ```
 
-Edit your juno config in the app file (`~/.juno/config/app.toml`) to be 0 fees for any denoms set. This will take effect next restart.
+## Node Gas Fees Change
 
+Edit your Juno node app file config (`$HOME/.juno/config/app.toml`) to be 0 fees for any denoms set. This will take effect next restart.
 
     minimum-gas-prices = "0ujunox"
+
+## Setup Feeder
 
 Next, create a new price feeder account using the test keyring. This account will need to be sent 1 JUNOX _(1000000ujunox)_. This can be done before or after the upgrade takes place.
 
@@ -53,9 +56,30 @@ sed -i \
 $HOME/.juno/oracle-config.toml
 ```
 
+**NOTE** If your validator is in the United States, you will need to change the default Binance endpoint set.
+
+```bash
+nano $HOME/.juno/oracle-config.toml
+```
+
+Then change the default provider to the following at the very bottom:
+
+```toml
+[[provider_endpoints]]
+name = "binance"
+rest = "https://api.binance.us"
+websocket = "stream.binance.com:9443"
+```
+
+If you wish to add other custom providers for those found [HERE](https://github.com/CosmosContracts/juno/blob/main/price-feeder/oracle/provider/provider.go#L19-L30), you can do so by copy-pasting the above, then changing the name and endpoints for each provider.
+
+## Service File
+
 Create a service file for the oracle:
 
-    sudo nano /etc/systemd/system/oracle.service
+```sh
+sudo nano /etc/systemd/system/oracle.service
+```
 
 Here's the config:
 
@@ -86,13 +110,6 @@ sudo systemctl enable oracle
 sudo systemctl start oracle
 ```
 
-Once the chain is back online you must do the following:
-
-```sh
-junod tx bank send <validator_key> <feeder_addr> 1000000ujunox  --chain-id uni-5 --gas-prices 0.1ujunox --gas-adjustment 1.3 --gas auto
-junod tx oracle set-feeder <feeder_addr> --from <validator_key>  --chain-id uni-5 --gas-prices 0.1ujunox --gas-adjustment 1.3 --gas auto
-```
-
 If you've not voted yet, please vote:
 
     junod tx gov vote 31 yes --gas-prices 0.1ujunox --gas-adjustment 1.3 --gas auto --chain-id uni-5 -y --from <key> -b block
@@ -102,6 +119,8 @@ More info on the changes in this proposed release can be found [on the release p
 The Upgrade is scheduled for block `1785500`, which should be about _1700 UTC on Friday 20th January_. [Here's a countdown](https://testnet.mintscan.io/juno-testnet/blocks/1785500).
 
 For unattended updates, [cosmovisor is your friend](https://docs.junochain.com/validators/setting-up-cosmovisor).
+
+## Install Junod binary
 
 ```bash
 # get the new version
@@ -119,4 +138,14 @@ cp $HOME/go/bin/junod $DAEMON_HOME/cosmovisor/upgrades/v12/bin
 
 # find out what version you are about to run - should be v12.0.0-alpha
 $DAEMON_HOME/cosmovisor/upgrades/v12/bin/junod version
+```
+
+## Post Launch
+
+Once the chain is back online you must do the following to connect your feeder account to your validator:
+
+```sh
+junod tx bank send <validator_key> <feeder_addr> 1000000ujunox  --chain-id uni-5 --gas-prices 0.1ujunox --gas-adjustment 1.3 --gas auto
+
+junod tx oracle set-feeder <feeder_addr> --from <validator_key>  --chain-id uni-5 --gas-prices 0.1ujunox --gas-adjustment 1.3 --gas auto
 ```
