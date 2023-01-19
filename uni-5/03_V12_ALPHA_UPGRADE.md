@@ -24,7 +24,9 @@ price-feeder version # sdk: v0.45.11 and go1.19.*
 
 Edit your Juno node app file config (`$HOME/.juno/config/app.toml`) to be 0 fees for any denoms set. This will take effect next restart.
 
-    minimum-gas-prices = "0ujunox"
+```toml
+minimum-gas-prices = "0ujunox"
+```
 
 ## Setup Feeder
 
@@ -32,16 +34,19 @@ Next, create a new price feeder account using the test keyring. This account wil
 
 ```sh
 junod keys add feeder --keyring-backend test
+
 junod tx bank send <validator> <feeder-address> 1000000ujunox --chain-id uni-5 --gas-prices 0.1ujunox --gas-adjustment 1.3 --gas auto
 ```
 
 Update the oracle config in `$HOME/.juno/oracle-config.toml`
 
-    nano $HOME/.juno/oracle-config.toml
+```sh
+nano $HOME/.juno/oracle-config.toml
+```
 
 Set the gas_price to `0ujunox`. Then set the address you created (feeder address) and validator (valoper address).
 
-You can do this configuration using sed, if you're into that:
+You can do this configuration using sed if you're into that:
 
 ```sh
 FEEDER_ADDR=<feeder-addr>
@@ -75,7 +80,7 @@ If you wish to add other custom providers for those found [HERE](https://github.
 
 ## Service File
 
-Create a service file for the oracle:
+Create a service file for the oracle price feeder:
 
 ```sh
 sudo nano /etc/systemd/system/oracle.service
@@ -83,7 +88,7 @@ sudo nano /etc/systemd/system/oracle.service
 
 Here's the config:
 
-```
+```toml
 [Unit]
 Description=juno-price-feeder
 After=network.target
@@ -100,7 +105,7 @@ Environment="PRICE_FEEDER_PASS=anything"
 WantedBy=multi-user.target
 ```
 
-The price feeder pass can be set to anything if you're using keyring test in the config file.
+The price feeder pass can be set to anything if you're using the test keyring in the config file.
 
 Enable like so:
 
@@ -112,7 +117,9 @@ sudo systemctl start oracle
 
 If you've not voted yet, please vote:
 
-    junod tx gov vote 31 yes --gas-prices 0.1ujunox --gas-adjustment 1.3 --gas auto --chain-id uni-5 -y --from <key> -b block
+```sh
+junod tx gov vote 31 yes --gas-prices 0.1ujunox --gas-adjustment 1.3 --gas auto --chain-id uni-5 -y --from <key> -b block
+```
 
 More info on the changes in this proposed release can be found [on the release page](https://github.com/CosmosContracts/juno/releases/tag/v12.0.0-alpha).
 
@@ -145,7 +152,7 @@ $DAEMON_HOME/cosmovisor/upgrades/v12/bin/junod version
 Once the chain is back online you must do the following to connect your feeder account to your validator:
 
 ```sh
-junod tx bank send <validator_key> <feeder_addr> 1000000ujunox  --chain-id uni-5 --gas-prices 0.1ujunox --gas-adjustment 1.3 --gas auto
+junod tx bank send <validator_key> <feeder_addr> 1000000ujunox --chain-id uni-5 --gas-prices 0.1ujunox --gas-adjustment 1.3 --gas auto
 
-junod tx oracle set-feeder <feeder_addr> --from <validator_key>  --chain-id uni-5 --gas-prices 0.1ujunox --gas-adjustment 1.3 --gas auto
+junod tx oracle set-feeder <feeder_addr> --from <validator_key> --chain-id uni-5 --gas-prices 0.1ujunox --gas-adjustment 1.3 --gas auto
 ```
