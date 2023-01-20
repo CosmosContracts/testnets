@@ -29,6 +29,8 @@ Edit your Juno node app file config (`$HOME/.juno/config/app.toml`) to be 0 fees
 
 ```toml
 minimum-gas-prices = "0ujunox"
+  and
+pruning = "nothing" 
 ```
 
 ## Setup Feeder
