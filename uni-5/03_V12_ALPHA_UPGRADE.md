@@ -5,9 +5,12 @@ It's time to test Juno v12. Note that this upgrade introduces an oracle and pric
 ## Price Feeder Install
 
 ```sh
-cd ~
-git clone https://github.com/CosmosContracts/juno.git
-cd ./juno/price-feeder
+# assuming you have juno code dir in $HOME/juno
+cd $HOME/juno
+git fetch --tags
+git checkout v12.0.0-alpha
+
+cd price-feeder
 make install
 
 # Copy config to your location for future use & editing
