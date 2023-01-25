@@ -32,13 +32,18 @@ make build && make install
 Download snapshot:
 
 ```sh
+# Source
+wget https://quicksync.cros-nest.com/transfer/uni-5-1785500.tar.lz4
+
+# USA (Mirror)
 wget https://reece.sh/private/fanmoskoasjkde/uni-5-1785500-directory.tar.lz4
 ```
 
 Restore snapshot:
 
 ```sh
-lz4 -dc < uni-5-1785500-directory.tar.lz4 | tar xvf - --directory ~/.juno
+rm -rf $HOME/.juno/data
+lz4 -dc < uni-5-1785500-directory.tar.lz4 | tar xvf - --directory $HOME/.juno3
 ```
 
 Stop oracle:
