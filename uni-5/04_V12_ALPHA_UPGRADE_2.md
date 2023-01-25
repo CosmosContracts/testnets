@@ -23,9 +23,9 @@ junod tendermint unsafe-reset-all
 Switch back to the previous version (note you should already have the `v12` ready to go as described in the previous instructions):
 
 ```sh
-# get the old version
+# get the new version
 git fetch --tags
-git checkout v11.0.0-alpha
+git checkout v12.0.0-alpha2
 make build && make install
 ```
 
@@ -51,6 +51,13 @@ Stop oracle:
 ```sh
 sudo systemctl disable oracle
 sudo systemctl stop oracle
+```
+
+Ensure pruning is set to nothing in your app config
+
+```sh
+nano $HOME/.juno/config/app.toml
+# pruning = "nothing"
 ```
 
 Restart your node
