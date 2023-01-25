@@ -14,19 +14,26 @@ Stop node:
 sudo systemctl stop junod
 ```
 
-Reset:
+Stop oracle:
 
 ```sh
-junod tendermint unsafe-reset-all
+sudo systemctl disable oracle
+sudo systemctl stop oracle
 ```
 
-Switch back to the previous version (note you should already have the `v12` ready to go as described in the previous instructions):
+Install latest v12-alpha2 binary w/ ICA fix:
 
 ```sh
 # get the new version
 git fetch --tags
 git checkout v12.0.0-alpha2
 make build && make install
+
+junod version --long
+# name: juno
+# server_name: junod
+# version: v12.0.0-alpha2
+# commit: 63d21307463a6dc8b8869143ac1a191cf001d6ed
 ```
 
 Download snapshot:
@@ -46,17 +53,12 @@ rm -rf $HOME/.juno/data
 lz4 -dc < uni-5-1785500-directory.tar.lz4 | tar xvf - --directory $HOME/.juno3
 ```
 
-Stop oracle:
-
-```sh
-sudo systemctl disable oracle
-sudo systemctl stop oracle
-```
-
-Ensure pruning is set to nothing in your app config
+Set pruning to nothing & increase minimum fees to rule out GlobalFee
 
 ```sh
 nano $HOME/.juno/config/app.toml
+# minimum-gas-prices = "0.0025ujunox" #(or higher)
+# &
 # pruning = "nothing"
 ```
 
