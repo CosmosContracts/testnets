@@ -4,7 +4,7 @@ Welp, the last upgrade didn't succeed. Let's get ready to try again.
 
 Unfortunately, `uni-5` is not in a great state, we signed one block post-upgrade and then halted. So we are going to revive from a snapshot just before the upgrade (block 1785500).
 
-We're 90% sure the problem is in the new `x/oracle / x/globalfee` module, so for this restart we'll be turning OFF the price feeder.
+We're 90% sure the problem is in the new `x/oracle / x/globalfee` module, so for this restart, we'll be turning OFF the price feeder.
 
 **These instructions build off of the [previous instructions](./03_V12_ALPHA_UPGRADE.md) and assumed you followed them.**
 
@@ -21,19 +21,19 @@ sudo systemctl disable oracle
 sudo systemctl stop oracle
 ```
 
-Install latest v12-alpha2 binary w/ ICA fix, Remove GlobalFee:
+Install the latest v12 alpha binary w/ ICA fix and remove x/GlobalFee:
 
 ```sh
-# get the new version
+# get the new version & install
 git fetch --tags
-git checkout v12.0.0-alpha2
+git checkout v12.0.0-alpha3
 make build && make install
 
 junod version --long
 # name: juno
 # server_name: junod
-# version: v12.0.0-alpha2
-# commit: 
+# version: v12.0.0-alpha3
+# commit: 1401967c8662e74a49a7004d6e4d04fe6f4139e1
 ```
 
 Download snapshot:
@@ -50,7 +50,7 @@ Restore snapshot:
 
 ```sh
 rm -rf $HOME/.juno/data
-lz4 -dc < uni-5-1785500-directory.tar.lz4 | tar xvf - --directory $HOME/.juno3
+lz4 -dc < uni-5-1785500-directory.tar.lz4 | tar xvf - --directory $HOME/.juno
 ```
 
 Set pruning to nothing & increase minimum fees back to before
@@ -69,10 +69,10 @@ nano $HOME/.juno/config/config.toml
 # log_level = "trace"
 ```
 
-Start your node Monday at 1700UTC
+Ping the chat when ready.
+
+We will start nodes `Monday at 1700 UTC (12 PM Eastern)`
 
 ```sh
 sudo systemctl start junod
 ```
-
-Ping the chat when you're done.
