@@ -1,10 +1,10 @@
-# V12 Alpha-2 Prep
+# V12 Alpha-3 Upgrade
 
-Welp, the last upgrade didn't succeed. Let's get ready to try again.
+Welp, the last upgrade didn't succeed. Let's get ready to try again. The purpose of this upgrade is to rule out other potential issues and gather more infomation, and hopefully restore the testnet.
 
 Unfortunately, `uni-5` is not in a great state, we signed one block post-upgrade and then halted. So we are going to revive from a snapshot just before the upgrade (block 1785500).
 
-We're 90% sure the problem is in the new `x/oracle / x/globalfee` module, so for this restart, we'll be turning OFF the price feeder.
+We suspect the problem is in the new `x/oracle / x/globalfee` module, so for this restart, we'll be turning OFF the price feeder. 
 
 **These instructions build off of the [previous instructions](./03_V12_ALPHA_UPGRADE.md) and assumed you followed them.**
 
