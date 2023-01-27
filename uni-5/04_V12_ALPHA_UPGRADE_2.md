@@ -53,6 +53,11 @@ rm -rf $HOME/.juno/data
 lz4 -dc < uni-5-1785500-directory.tar.lz4 | tar xvf - --directory $HOME/.juno
 ```
 
+**NOTE**
+This relaunch is done without copying back the priv_validator_state.json. We are starting with the empty one provided `{}` since block XXXX501 was signed. If you are using a remote signer, you will need to do some extra work to join at the upgrade height.
+
+<br />
+
 Set pruning to nothing & increase minimum fees back to before
 
 ```sh
