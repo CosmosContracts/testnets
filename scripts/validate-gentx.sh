@@ -4,13 +4,13 @@ set -x
 
 JUNOD_HOME="/tmp/junod$(date +%s)"
 RANDOM_KEY="randomjunodvalidatorkey"
-CHAIN_ID=uni-5
+CHAIN_ID=uni-6
 DENOM=ujunox
 VALIDATOR_COINS=10000000000$DENOM
 MAXBOND=9000000000
 GENTX_FILE=$(find ./$CHAIN_ID/gentx -iname "*.json")
 LEN_GENTX=$(echo ${#GENTX_FILE})
-JUNOD_TAG="v9.0.0"
+JUNOD_TAG="v11.0.0"
 
 # Gentx Start date
 start="2021-10-11 01:00:00Z"
@@ -18,7 +18,7 @@ start="2021-10-11 01:00:00Z"
 stTime=$(date --date="$start" +%s)
 
 # Gentx End date
-end="2022-09-23 14:30:00Z"
+end="2023-02-01 17:00:00Z"
 # Compute the seconds since epoch for end date
 endTime=$(date --date="$end" +%s)
 
