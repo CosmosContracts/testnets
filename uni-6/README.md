@@ -214,7 +214,7 @@ journalctl -u junod -f
 
 ```bash
 sha256sum "${HOME}/.juno/config/genesis.json"
-# TBC
+# 4c90e8bfce9b7fab824b923cbb7bdddf276f1040f3651fdb5304a4289147ea90
 ```
 
 **junod version**
