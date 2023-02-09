@@ -13,7 +13,7 @@ NOTE: do not do this on a mainnet or Uni node currently running...
 3. Remove genesis `rm .juno/config/genesis.json`
 4. Remove gentxs `rm -r .juno/config/gentx/`
 5. If you are using cosmovisor, remove symlink: `rm .juno/cosmovisor/current`
-6. Check genesis bin is `v4.0.0`: `$DAEMON_HOME/cosmovisor/genesis/bin/junod version`
+6. Check genesis bin is `v12.0.0-beta.1`: `$DAEMON_HOME/cosmovisor/genesis/bin/junod version`
 7. Follow generate gentx as normal below
 
 ## Setup
