@@ -110,8 +110,18 @@ Genesis transaction written to "${HOME}/.juno/config/gentx/gentx-******.json"
 - Send your gentx in the discord group
 
   ```sh
-  > cat "${HOME}/.juno/config/gentx/gentx*.json"
+  > cat ${HOME}/.juno/config/gentx/gentx*.json
   ```
+
+- Send your peer in the discord group
+
+  ```sh
+  > junod tendermint show-node-id
+  ```
+
+  `ex: 9b5c23ca17129d17891d4bd22cca8fa2f20a8de3@135.181.85.92:26656`
+
+---
 
 #### Running in production
 
