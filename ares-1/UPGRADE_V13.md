@@ -14,7 +14,7 @@ For unattended updates, [cosmovisor is your friend](https://docs.junochain.com/v
 
 # get the new version
 git fetch --tags
-git checkout v13.0.0-beta.1
+git checkout v13.0.0-beta
 make build && make install
 
 # check the version - should be v13.0.0-beta.1
