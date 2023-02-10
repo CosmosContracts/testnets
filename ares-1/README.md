@@ -173,21 +173,19 @@ journalctl -u junod -f
 
 ## Once the Genesis has been Generated
 
-TBD
-
-<!-- **Genesis File**
+*Genesis File**
 
 [Genesis File](/ares-1/genesis.json):
 
 ```bash
-   curl -s  https://raw.githubusercontent.com/CosmosContracts/testnets/main/ares-1/genesis.json > ~/.juno/config/genesis.json
+   curl -s  https://raw.githubusercontent.com/CosmosContracts/testnets/main/ares-1/config/genesis.json > ~/.juno/config/genesis.json
 ```
 
 **Genesis sha256**
 
 ```bash
 sha256sum "${HOME}/.juno/config/genesis.json"
-# TBD
+# d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed
 ```
 
 **junod version**
@@ -196,21 +194,24 @@ sha256sum "${HOME}/.juno/config/genesis.json"
 $ junod version --long
 name: juno
 server_name: junod
-version: v4.0.0
-commit: 299fe4bdee7a7a8b45cd2776359243fdf3630e5a
+version: v12.0.0-beta.1
+commit: c2aa971c72afcac13fa09e622db40853f5c86f24
 build_tags: netgo,ledger
-``` -->
+```
 
 **Seed nodes**
 
-```
+```text
 TBD
 ```
 
 **Persistent Peers**
 
-```
-TBD
+```text
+9b5c23ca17129d17891d4bd22cca8fa2f20a8de3@135.181.85.92:26656
+b41337c2b5dcbf52b5451f7bae0b1609a192d58d@64.5.123.193:26656
+d1de6b0c080ca5d3b346a84b0b03d7e3a19ff80a@65.144.145.234:26656
+c730220662ea2b39cca3d953a5c5c190a1433bd5@95.217.144.107:12656
 ```
 
 ### Learn more

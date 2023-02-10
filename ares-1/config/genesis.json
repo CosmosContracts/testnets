@@ -1,5 +1,5 @@
 {
-  "genesis_time": "2023-02-10T15:00:00Z",
+  "genesis_time": "2023-02-10T17:00:00Z",
   "chain_id": "ares-1",
   "initial_height": "1",
   "consensus_params": {
@@ -32,15 +32,32 @@
       },
       "accounts": [
         {
-          "@type": "/cosmos.auth.v1beta1.ModuleAccount",
-          "base_account": {
-            "address": "juno1jv65s3grqf6v6jl3dp4t6c9t9rk99cd83d88wr",
-            "pub_key": null,
-            "account_number": "0",
-            "sequence": "0"
-          },
-          "name": "distribution",
-          "permissions": []
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "juno17f3y7v7tv35anqch6f3w8wyuvuywks02qfhlzx",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "juno1jt9w26mpxxjsk63mvd4m2ynj0af09csl4naawd",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "juno1cddrc4lx9eaxz5t5jnskxmc8rukvrmyycc8u8d",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "juno1agmlvgn2nzutsnjt77ruds3hk9f4z4dw5q0w0z",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
         },
         {
           "@type": "/cosmos.auth.v1beta1.BaseAccount",
@@ -51,35 +68,7 @@
         },
         {
           "@type": "/cosmos.auth.v1beta1.BaseAccount",
-          "address": "juno1t0heu5cca4n3dgg308rskpn9d60mj8fyrgw9jne5fve9mygsm9xqkcrpl2",
-          "pub_key": null,
-          "account_number": "0",
-          "sequence": "0"
-        },
-        {
-          "@type": "/cosmos.auth.v1beta1.BaseAccount",
-          "address": "juno1xwazl8ftks4gn00y5x3c47auquc62ssune9ppv",
-          "pub_key": null,
-          "account_number": "0",
-          "sequence": "0"
-        },
-        {
-          "@type": "/cosmos.auth.v1beta1.BaseAccount",
-          "address": "juno1hrvtxxlqaxq9gavtsadgd6wnf99630zdn0xt4d",
-          "pub_key": null,
-          "account_number": "0",
-          "sequence": "0"
-        },
-        {
-          "@type": "/cosmos.auth.v1beta1.BaseAccount",
-          "address": "juno1vh2xqj32yzd5lyhhlwftml2c2edee5a0llne2x",
-          "pub_key": null,
-          "account_number": "0",
-          "sequence": "0"
-        },
-        {
-          "@type": "/cosmos.auth.v1beta1.BaseAccount",
-          "address": "juno1z8tvmvjes5wug59wcm87rszxn47mgd7rzw9qsh",
+          "address": "juno10r39fueph9fq7a6lgswu4zdsg8t3gxlq670lt0",
           "pub_key": null,
           "account_number": "0",
           "sequence": "0"
@@ -96,47 +85,29 @@
       },
       "balances": [
         {
-          "address": "juno1z8tvmvjes5wug59wcm87rszxn47mgd7rzw9qsh",
+          "address": "juno10r39fueph9fq7a6lgswu4zdsg8t3gxlq670lt0",
           "coins": [
             {
               "denom": "ujunox",
-              "amount": "10000000000"
+              "amount": "6969696969"
             }
           ]
         },
         {
-          "address": "juno1xwazl8ftks4gn00y5x3c47auquc62ssune9ppv",
+          "address": "juno1jt9w26mpxxjsk63mvd4m2ynj0af09csl4naawd",
           "coins": [
             {
               "denom": "ujunox",
-              "amount": "10000000000"
+              "amount": "9000000000"
             }
           ]
         },
         {
-          "address": "juno1t0heu5cca4n3dgg308rskpn9d60mj8fyrgw9jne5fve9mygsm9xqkcrpl2",
+          "address": "juno1cddrc4lx9eaxz5t5jnskxmc8rukvrmyycc8u8d",
           "coins": [
             {
               "denom": "ujunox",
-              "amount": "314159265359"
-            }
-          ]
-        },
-        {
-          "address": "juno1vh2xqj32yzd5lyhhlwftml2c2edee5a0llne2x",
-          "coins": [
-            {
-              "denom": "ujunox",
-              "amount": "10000000000"
-            }
-          ]
-        },
-        {
-          "address": "juno1hrvtxxlqaxq9gavtsadgd6wnf99630zdn0xt4d",
-          "coins": [
-            {
-              "denom": "ujunox",
-              "amount": "10000000000"
+              "amount": "9000000000"
             }
           ]
         },
@@ -148,9 +119,32 @@
               "amount": "500000000000"
             }
           ]
+        },
+        {
+          "address": "juno1agmlvgn2nzutsnjt77ruds3hk9f4z4dw5q0w0z",
+          "coins": [
+            {
+              "denom": "ujunox",
+              "amount": "9000000000"
+            }
+          ]
+        },
+        {
+          "address": "juno17f3y7v7tv35anqch6f3w8wyuvuywks02qfhlzx",
+          "coins": [
+            {
+              "denom": "ujunox",
+              "amount": "9000000000"
+            }
+          ]
         }
       ],
-      "supply": [],
+      "supply": [
+        {
+          "denom": "ujunox",
+          "amount": "542969696969"
+        }
+      ],
       "denom_metadata": []
     },
     "capability": {
@@ -196,7 +190,7 @@
               {
                 "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
                 "description": {
-                  "moniker": "derpnet",
+                  "moniker": "LogiCrypt",
                   "identity": "",
                   "website": "",
                   "security_contact": "",
@@ -208,11 +202,11 @@
                   "max_change_rate": "0.010000000000000000"
                 },
                 "min_self_delegation": "1",
-                "delegator_address": "juno1hrvtxxlqaxq9gavtsadgd6wnf99630zdn0xt4d",
-                "validator_address": "junovaloper1hrvtxxlqaxq9gavtsadgd6wnf99630zdvjsyw5",
+                "delegator_address": "juno1cddrc4lx9eaxz5t5jnskxmc8rukvrmyycc8u8d",
+                "validator_address": "junovaloper1cddrc4lx9eaxz5t5jnskxmc8rukvrmyy893nu5",
                 "pubkey": {
                   "@type": "/cosmos.crypto.ed25519.PubKey",
-                  "key": "lEIO6LX6WA9Dlg1BpCTHIHBpS7E1EDyEX1onKnYoOxs="
+                  "key": "NbhvBBEMPv2LtyBP9lMADW8x43dW/jbRrvAegxFnLag="
                 },
                 "value": {
                   "denom": "ujunox",
@@ -220,7 +214,7 @@
                 }
               }
             ],
-            "memo": "455fd5a038239dfa1b295d2317b2cea913d98cf7@10.0.0.3:26656",
+            "memo": "b41337c2b5dcbf52b5451f7bae0b1609a192d58d@10.9.42.193:26656",
             "timeout_height": "0",
             "extension_options": [],
             "non_critical_extension_options": []
@@ -230,7 +224,7 @@
               {
                 "public_key": {
                   "@type": "/cosmos.crypto.secp256k1.PubKey",
-                  "key": "AtfvjUUtNErlR0gB5WH6nbwzt5do7/ANInBA2hrfvs00"
+                  "key": "A04IgcXchVFKQ8MXMpPIlEWUkN2jDLqOeWjsqro9P1EA"
                 },
                 "mode_info": {
                   "single": {
@@ -248,7 +242,7 @@
             }
           },
           "signatures": [
-            "Viy7dTZb3sN59h+0jmuKcIrqEXaeBloXy7W+eQojitl6KEwzP16pA7hGDjSYVKiYJAG6VpM1GPeS9E9M+GQVxA=="
+            "HV68sGeR5KD6+EldmYBQcJ4niSCtkYbD6YYwhTc3SyUKkd7VEtpnre6dlcgNUN32UmI5x9s7dy9VmFNHwpntJQ=="
           ]
         },
         {
@@ -257,7 +251,7 @@
               {
                 "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
                 "description": {
-                  "moniker": "jabbey",
+                  "moniker": "pbcups",
                   "identity": "",
                   "website": "",
                   "security_contact": "",
@@ -269,11 +263,11 @@
                   "max_change_rate": "0.010000000000000000"
                 },
                 "min_self_delegation": "1",
-                "delegator_address": "juno1xwazl8ftks4gn00y5x3c47auquc62ssune9ppv",
-                "validator_address": "junovaloper1xwazl8ftks4gn00y5x3c47auquc62ssuvynw64",
+                "delegator_address": "juno17f3y7v7tv35anqch6f3w8wyuvuywks02qfhlzx",
+                "validator_address": "junovaloper17f3y7v7tv35anqch6f3w8wyuvuywks02l5psel",
                 "pubkey": {
                   "@type": "/cosmos.crypto.ed25519.PubKey",
-                  "key": "uD9rUhLAV9lNlbTrfGluEOvTctvJrBYP7Zi4Jvu4ziA="
+                  "key": "WQDakqzJeA+q6XjgbZe+WRjaBKtKicAXo2R8Xp3CuBY="
                 },
                 "value": {
                   "denom": "ujunox",
@@ -281,7 +275,7 @@
                 }
               }
             ],
-            "memo": "6fea1563f80afa24f22b8f39a7b35eb87387632d@207.244.239.15:26656",
+            "memo": "9b5c23ca17129d17891d4bd22cca8fa2f20a8de3@135.181.85.92:26656",
             "timeout_height": "0",
             "extension_options": [],
             "non_critical_extension_options": []
@@ -291,7 +285,7 @@
               {
                 "public_key": {
                   "@type": "/cosmos.crypto.secp256k1.PubKey",
-                  "key": "AmyLTnelrZ0zgMx4bFl/n237JKlztLUkhPbHCq6uP/vw"
+                  "key": "AvZZq/+ca4fJUCXFG/lds0xmyaTdtovbUhEp6WUB1DVF"
                 },
                 "mode_info": {
                   "single": {
@@ -309,7 +303,7 @@
             }
           },
           "signatures": [
-            "2mDbM/PflrajPBvJCFZfxn3KmO85JXvGoJsLQ/c1QbkKd4lRW1EQqp+nrQb1p3kGQP//xU8/10SCk8M48t5ZSg=="
+            "ISqkcRHbRiyzAMdq+9XC/83Fi0wJU+5ztczhIyZ4JpBQwHJKHj4lCXro0r5zHo7qHppmmpiTDu4rtGCVcECZXw=="
           ]
         },
         {
@@ -318,7 +312,7 @@
               {
                 "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
                 "description": {
-                  "moniker": "dimi",
+                  "moniker": "polkachu",
                   "identity": "",
                   "website": "",
                   "security_contact": "",
@@ -330,11 +324,11 @@
                   "max_change_rate": "0.010000000000000000"
                 },
                 "min_self_delegation": "1",
-                "delegator_address": "juno1vh2xqj32yzd5lyhhlwftml2c2edee5a0llne2x",
-                "validator_address": "junovaloper1vh2xqj32yzd5lyhhlwftml2c2edee5a0qz9k3l",
+                "delegator_address": "juno1jt9w26mpxxjsk63mvd4m2ynj0af09csl4naawd",
+                "validator_address": "junovaloper1jt9w26mpxxjsk63mvd4m2ynj0af09csl2wtj45",
                 "pubkey": {
                   "@type": "/cosmos.crypto.ed25519.PubKey",
-                  "key": "zebqVsWSWehXnPrcHyvoeOCcqYiBf09eTdeBEGG1m2c="
+                  "key": "nkA1OxA/1NV6vBN6VsfvbPXc/X1ncGj12Sqf6qtna/8="
                 },
                 "value": {
                   "denom": "ujunox",
@@ -342,7 +336,7 @@
                 }
               }
             ],
-            "memo": "b95425cbebe83a64a63915789a5106f1616e8e6c@165.22.121.40:26656",
+            "memo": "c730220662ea2b39cca3d953a5c5c190a1433bd5@95.217.144.107:26656",
             "timeout_height": "0",
             "extension_options": [],
             "non_critical_extension_options": []
@@ -352,7 +346,7 @@
               {
                 "public_key": {
                   "@type": "/cosmos.crypto.secp256k1.PubKey",
-                  "key": "AyUyyb/j8iIqd6kblydEeqwdEPCz9gO8xYMcrUHjBi3C"
+                  "key": "As1WcJsvf1NQgRlS8a2PHuueKhHlCYrFe3VooMxQdflR"
                 },
                 "mode_info": {
                   "single": {
@@ -370,7 +364,7 @@
             }
           },
           "signatures": [
-            "VJsWUAUVWPunem0BC1S8GBbCgUrFFzQcMSo4tWKwTkEdl2+nrv9s2+sMJP80vl/bDfiObcVgOAVnIS2S64Y8RA=="
+            "B50H7L0I8ZHX+ZZ9UdZ9XwO/HC0Bfcz6oNBelNX+lRFqxE4ransd9c8AGQtEFpTqZoNM6y8+QZJ1/7NzDJRw4g=="
           ]
         },
         {
@@ -379,23 +373,23 @@
               {
                 "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
                 "description": {
-                  "moniker": "HORSE",
-                  "identity": "59C635D1CD02FEEC",
-                  "website": "",
-                  "security_contact": "",
-                  "details": "Nope, it's someone else."
+                  "moniker": "Silk Nodes",
+                  "identity": "1326A75B9148A214",
+                  "website": "SilkNodes.io",
+                  "security_contact": "info@silknodes.io",
+                  "details": "Silk Nodes pride ourselves on being 100% bare metal validators, running our own infrastructure to validate the chains we are active on, we are also proud to say we run IBC relayer nodes to help support the networks."
                 },
                 "commission": {
-                  "rate": "0.050000000000000000",
+                  "rate": "0.100000000000000000",
                   "max_rate": "0.200000000000000000",
                   "max_change_rate": "0.010000000000000000"
                 },
                 "min_self_delegation": "1",
-                "delegator_address": "juno1z8tvmvjes5wug59wcm87rszxn47mgd7rzw9qsh",
-                "validator_address": "junovaloper1z8tvmvjes5wug59wcm87rszxn47mgd7rann0tw",
+                "delegator_address": "juno1agmlvgn2nzutsnjt77ruds3hk9f4z4dw5q0w0z",
+                "validator_address": "junovaloper1agmlvgn2nzutsnjt77ruds3hk9f4z4dwtaep5m",
                 "pubkey": {
                   "@type": "/cosmos.crypto.ed25519.PubKey",
-                  "key": "FLbI7cmzxqcvD8tWeW8Q59XmIl2PXNEHOYDUs3dkOPQ="
+                  "key": "RbpYFGhCHUalGjuyScjIdVUjyQrRTyFQmjwiJNFUX7s="
                 },
                 "value": {
                   "denom": "ujunox",
@@ -403,7 +397,7 @@
                 }
               }
             ],
-            "memo": "da526df66512b35d9915f7075b1c56369bece967@10.254.106.45:26656",
+            "memo": "d1de6b0c080ca5d3b346a84b0b03d7e3a19ff80a@10.42.44.187:26656",
             "timeout_height": "0",
             "extension_options": [],
             "non_critical_extension_options": []
@@ -413,7 +407,7 @@
               {
                 "public_key": {
                   "@type": "/cosmos.crypto.secp256k1.PubKey",
-                  "key": "A3Fslp4jtj9YzwhVekBPuT8TOFA7CtHHPEB7YChIOYvQ"
+                  "key": "AqHpnhvCVxxOYMF0i9ZlfTR6OpWuw0ZCHDSSJToE1oco"
                 },
                 "mode_info": {
                   "single": {
@@ -431,7 +425,7 @@
             }
           },
           "signatures": [
-            "WUcU3tpErhUKAa/rhI7n1qP0AqGnm84epCNvQmV5NfwzJ8RcZjPAC0xNg6tSrOrKp/nuiUhuGDapLQ1nJQHWTQ=="
+            "BCq2+YnO3DZfRYpTxM59kUYTGVEgXYPbdA5A6+DFJwQFWa0rTcmGCvFeeBDnlkn+LmomW/w5WDQnaeNXuUL63A=="
           ]
         }
       ]
@@ -451,7 +445,7 @@
         "max_deposit_period": "864000s"
       },
       "voting_params": {
-        "voting_period": "1800s"
+        "voting_period": "21600s"
       },
       "tally_params": {
         "quorum": "0.100000000000000000",
@@ -490,6 +484,40 @@
         "recv_sequences": [],
         "ack_sequences": [],
         "next_channel_sequence": "0"
+      }
+    },
+    "interchainaccounts": {
+      "controller_genesis_state": {
+        "active_channels": [],
+        "interchain_accounts": [],
+        "params": {},
+        "ports": []
+      },
+      "host_genesis_state": {
+        "active_channels": [],
+        "interchain_accounts": [],
+        "params": {
+          "allow_messages": [
+            "/cosmos.bank.v1beta1.MsgSend",
+            "/cosmos.staking.v1beta1.MsgDelegate",
+            "/cosmos.staking.v1beta1.MsgBeginRedelegate",
+            "/cosmos.staking.v1beta1.MsgCreateValidator",
+            "/cosmos.staking.v1beta1.MsgEditValidator",
+            "/cosmos.distribution.v1beta1.MsgWithdrawDelegatorReward",
+            "/cosmos.distribution.v1beta1.MsgSetWithdrawAddress",
+            "/cosmos.distribution.v1beta1.MsgWithdrawValidatorCommission",
+            "/cosmos.distribution.v1beta1.MsgFundCommunityPool",
+            "/cosmos.gov.v1beta1.MsgVote",
+            "/cosmos.authz.v1beta1.MsgExec",
+            "/cosmos.authz.v1beta1.MsgGrant",
+            "/cosmos.authz.v1beta1.MsgRevoke",
+            "/cosmwasm.wasm.v1.MsgStoreCode",
+            "/cosmwasm.wasm.v1.MsgInstantiateContract",
+            "/cosmwasm.wasm.v1.MsgExecuteContract"
+          ],
+          "host_enabled": true
+        },
+        "port": "icahost"
       }
     },
     "mint": {
@@ -548,8 +576,7 @@
           "permission": "Everybody",
           "address": ""
         },
-        "instantiate_default_permission": "Everybody",
-        "max_wasm_code_size": "1228800"
+        "instantiate_default_permission": "Everybody"
       },
       "codes": [],
       "contracts": [],
