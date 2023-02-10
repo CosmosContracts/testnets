@@ -178,14 +178,14 @@ journalctl -u junod -f
 [Genesis File](/ares-1/genesis.json):
 
 ```bash
-   curl -s  https://raw.githubusercontent.com/CosmosContracts/testnets/main/ares-1/config/genesis.json > ~/.juno/config/genesis.json
+   curl -s  https://raw.githubusercontent.com/CosmosContracts/testnets/reece/v13-multiupdate/ares-1/config/genesis.json > ~/.juno/config/genesis.json
 ```
 
 **Genesis sha256**
 
 ```bash
 sha256sum "${HOME}/.juno/config/genesis.json"
-# d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed
+# 4bd448d6e22b4f65501f0a03f8dcb962cd26afe5e83067251f6a1ba0dbb6b2f6
 ```
 
 **junod version**
