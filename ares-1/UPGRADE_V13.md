@@ -22,10 +22,10 @@ make build && make install
 junod version
 
 # if you are using cosmovisor you then need to make a new dir and copy this new binary
-mkdir -p $DAEMON_HOME/cosmovisor/upgrades/v13/bin
-cp $HOME/go/bin/junod $DAEMON_HOME/cosmovisor/upgrades/v13/bin
+mkdir -p $DAEMON_HOME/cosmovisor/upgrades/v13-1/bin
+cp $HOME/go/bin/junod $DAEMON_HOME/cosmovisor/upgrades/v13-1/bin
 
 # find out what version you are about to run - should be v13.0.0-beta
-$DAEMON_HOME/cosmovisor/upgrades/v13/bin/junod version
+$DAEMON_HOME/cosmovisor/upgrades/v13-1/bin/junod version
 
 ```
