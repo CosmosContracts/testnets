@@ -14,17 +14,17 @@ For unattended updates, [cosmovisor is your friend](https://docs.junochain.com/v
 
 ```bash
 # get the new version
-git fetch --tags && git checkout v12.0.0-beta
+git fetch --tags && git checkout v12.0.0-beta.1
 make build && make install
 
-# check the version - should be v12.0.0-beta
-# junod version --long will be commit 3effc8146e9c4ade699402ae7f7f0ca560bf426e
+# check the version - should be v12.0.0-beta.1
+# junod version --long will be commit c2aa971c72afcac13fa09e622db40853f5c86f24
 junod version
 
 # if you are using cosmovisor you then need to make a new dir and copy this new binary
 mkdir -p $DAEMON_HOME/cosmovisor/upgrades/v12/bin
 cp $HOME/go/bin/junod $DAEMON_HOME/cosmovisor/upgrades/v12/bin
 
-# find out what version you are about to run - should be v12.0.0-beta
+# find out what version you are about to run - should be v12.0.0-beta.1
 $DAEMON_HOME/cosmovisor/upgrades/v12/bin/junod version
 ```
