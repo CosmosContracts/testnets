@@ -32,9 +32,9 @@ junod version --long
 # commit: e10e3241c9ec146670f1a08540104f017bed210c
 
 # if you are using cosmovisor you then need to make a new dir and copy this new binary
-mkdir -p $DAEMON_HOME/cosmovisor/upgrades/v13/bin
-cp $HOME/go/bin/junod $DAEMON_HOME/cosmovisor/upgrades/v13/bin
+mkdir -p $DAEMON_HOME/cosmovisor/upgrades/v14/bin
+cp $HOME/go/bin/junod $DAEMON_HOME/cosmovisor/upgrades/v14/bin
 
 # find out what version you are about to run - should be the same as the tag
-$DAEMON_HOME/cosmovisor/upgrades/v13/bin/junod version
+$DAEMON_HOME/cosmovisor/upgrades/v14/bin/junod version
 ```
