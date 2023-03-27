@@ -6,6 +6,22 @@ The Upgrade is scheduled for block `770462`, which should be about _1600 UTC on 
 
 As always, for unattended updates, [Cosmovisor is your friend](https://docs.junochain.com/validators/setting-up-cosmovisor).
 
+## Setup
+
+This update requires a modification to all validator's app.toml. Please make sure to update your app.toml to include the following:
+
+```toml
+# Update app.toml key:
+
+minimum-gas-prices = "0ujunox"
+
+# NOTE: mainnet will be ujuno & the atom ibc denom
+# Fees are now done through governance for the minimums. 
+# Provided a network spam attack, you may raise your fees above the default 0.0025ujunox limit
+```
+
+## Installation
+
 ```bash
 # get the new version
 git fetch --tags && git checkout v14.0.0-alpha.1
