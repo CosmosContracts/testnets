@@ -13,6 +13,8 @@ As always, for unattended updates, [Cosmovisor is your friend](https://docs.juno
 git fetch --tags && git checkout v15.0.0-alpha.1
 make build && make install
 
+rm -rf $HOME/.juno/data/wasm/cache/
+
 junod version --long | grep "cosmos_sdk_version\|commit\|version:"
 # version: v15.0.0-alpha.1
 # commit: b7901a7494fe5112dfa5b0b9d5f95d2c2e60c27f
