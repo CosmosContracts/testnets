@@ -9,6 +9,8 @@ As always, for unattended updates, [Cosmovisor is your friend](https://docs.cosm
 ## Installation
 
 ```bash
+* Go Version 1.21+ is required
+
 # get the new version
 git fetch --tags && git checkout v19.0.0-alpha.1
 make build && make install
