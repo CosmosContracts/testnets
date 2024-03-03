@@ -31,11 +31,11 @@ cp ~/go/bin/junod ~/go/bin/junod-v20
 mv junod ~/go/bin/junod
 
 # if you are using cosmovisor you then need to make a new dir and copy this new binary
-mkdir -p $DAEMON_HOME/cosmovisor/upgrades/v21/bin
-cp $HOME/go/bin/junod $DAEMON_HOME/cosmovisor/upgrades/v21/bin
+mkdir -p $DAEMON_HOME/cosmovisor/upgrades/v2100alpha1/bin
+cp $HOME/go/bin/junod $DAEMON_HOME/cosmovisor/upgrades/v2100alpha1/bin
 
 # find out what version you are about to run - should be the same as the tag
-$DAEMON_HOME/cosmovisor/upgrades/v21/bin/junod version
+$DAEMON_HOME/cosmovisor/upgrades/v2100alpha1/bin/junod version
 ```
 
 ## Code verification
