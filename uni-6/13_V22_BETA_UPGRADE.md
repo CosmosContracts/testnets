@@ -2,7 +2,7 @@
 
 This upgrade fixes bumps CosmosSDK and CometBFT to the latest compatible versions.
 
-The Upgrade is scheduled for block `10121300`, which should be about _1500 UTC on Tuesday 23rd Aprile_. [Here's a countdown](https://explorer.stavr.tech/Juno-Testnet/block/10121300).
+The Upgrade is scheduled for block `10121300`, which should be about _1500 UTC on Tuesday 23rd April_. [Here's a countdown](https://explorer.stavr.tech/Juno-Testnet/block/10121300).
 
 As always, for unattended updates, [Cosmovisor is your friend](https://docs.cosmos.network/main/build/tooling/cosmovisor).
 
