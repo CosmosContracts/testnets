@@ -21,7 +21,7 @@ junod version --long | grep "cosmos_sdk_version\|commit\|version:"
 # version: v22.0.0
 
 # if you are using cosmovisor you then need to make a new dir and copy this new binary
-mkdir -p $DAEMON_HOME/cosmovisor/upgrades/v22alpha1/bin
+mkdir -p $DAEMON_HOME/cosmovisor/upgrades/v2200alpha1/bin
 cp $HOME/go/bin/junod $DAEMON_HOME/cosmovisor/upgrades/v22alpha1/bin
 
 # find out what version you are about to run - should be v22.0.0 or v22.0.0-alpha1 (they are the same)
