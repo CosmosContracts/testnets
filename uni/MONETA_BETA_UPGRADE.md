@@ -12,7 +12,7 @@ As always, for unattended updates, [use cosmovisor](https://docs.junochain.com/v
 
 ```bash
 # get the new version
-git checkout main # in case you are in detatched HEAD
+git checkout main # in case you are in detached HEAD
 git pull
 git checkout v2.0.0-beta.2
 make build && make install
