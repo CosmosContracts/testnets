@@ -1,6 +1,6 @@
 # V12 Alpha-3 Upgrade
 
-Welp, the last upgrade didn't succeed. Let's get ready to try again. The purpose of this upgrade is to rule out other potential issues and gather more infomation, and hopefully restore the testnet.
+Welp, the last upgrade didn't succeed. Let's get ready to try again. The purpose of this upgrade is to rule out other potential issues and gather more information, and hopefully restore the testnet.
 
 Unfortunately, `uni-5` is not in a great state, we signed one block post-upgrade and then halted. So we are going to revive from a snapshot just before the upgrade (block 1785500).
 
