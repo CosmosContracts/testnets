@@ -4,6 +4,8 @@ This unincentivized testnet will start at juno `v27.0.0`.
 
 The faucet will be patched to have a large sum of fake USDC, usdcx.
 
+All mainnet balances have been copied to the testnet, under the new "ujunox" denom.
+
 ## Setup
 
 **Prerequisites:** Make sure to have [Golang >=1.22](https://golang.org/).
@@ -84,7 +86,7 @@ junod add-genesis-account $(junod keys show <key-name> -a) 10000000000ujunox
 4. Create the gentx, use only `9000000000ujunox`:
 
 ```bash
-junod gentx <key-name> 9000000000ujunox --chain-id=uni-6
+junod gentx <key-name> 9000000000ujunox --chain-id=uni-7
 ```
 
 If all goes well, you will see a message similar to the following:
@@ -171,7 +173,7 @@ journalctl -u junod -f
 [Genesis File](/uni-7/genesis.zip):
 
 ```bash
-   curl -s  https://raw.githubusercontent.com/CosmosContracts/testnets/main/uni-6/genesis.zip > ~/.juno/config/genesis.zip
+   curl -s  https://raw.githubusercontent.com/CosmosContracts/testnets/main/uni-7/genesis.zip > ~/.juno/config/genesis.zip
    cd ~/.juno/config/
    unzip genesis.zip
    rm genesis.zip
