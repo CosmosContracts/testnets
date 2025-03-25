@@ -8,7 +8,7 @@ CHAIN_ID=uni-7
 DENOM=ujunox
 VALIDATOR_COINS=10000000000$DENOM
 MAXBOND=9000000000
-GENTX_FILE=$(find ./$CHAIN_ID/gentx -iname "*.json")
+GENTX_FILE=$(find ./$CHAIN_ID/gentxs -iname "*.json")
 LEN_GENTX=$(echo ${#GENTX_FILE})
 JUNOD_TAG="v27.0.0"
 
