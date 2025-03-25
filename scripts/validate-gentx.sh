@@ -99,7 +99,7 @@ else
     mkdir -p $JUNOD_HOME/config/gentx/
 
     # add submitted gentxs
-    cp -r ../$CHAIN_ID/gentx/* $JUNOD_HOME/config/gentx/
+    cp -r ../$CHAIN_ID/gentxs/* $JUNOD_HOME/config/gentx/
 
     echo "..........Collecting gentxs......."
     ./bin/junod genesis collect-gentxs --home $JUNOD_HOME &> log.txt
