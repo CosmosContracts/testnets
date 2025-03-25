@@ -202,13 +202,13 @@ version: v27.0.0
 **Seed nodes**
 
 ```
-TBD
+3d98a19309914f782595f0db73fb4f24a776bf1b@188.245.196.88:26656
 ```
 
 **Persistent Peers**
 
 ```
-TBC
+682ab357c76c71d3bc7802d9190c030064ffb984@65.109.61.50:26656
 ```
 
 ### Learn more
