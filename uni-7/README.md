@@ -107,11 +107,11 @@ Genesis transaction written to "${HOME}/.juno/config/gentx/gentx-******.json"
   git clone https://github.com/<your-github-username>/testnets
   ```
 
-- Copy the generated gentx json file to `<repo_path>/uni-7/gentx/`. If you want, rename it to `<your-validator-moniker>.json` so it's easier to identify.
+- Copy the generated gentx json file to `<repo_path>/uni-7/gentxs/`. If you want, rename it to `<your-validator-moniker>.json` so it's easier to identify.
 
   ```sh
   > cd testnets
-  > cp "${HOME}/.juno/config/gentx/gentx*.json" ./uni-7/gentx/
+  > cp "${HOME}/.juno/config/gentx/gentx*.json" ./uni-7/gentxs/
   ```
 
 - Commit and push to your repo
@@ -183,7 +183,7 @@ journalctl -u junod -f
 
 ```bash
 sha256sum "${HOME}/.juno/config/genesis.json"
-# <todo>
+# 627f0b5dca4c63820282fb3e44ba959de4435c86b2d1dc8169485b7ef66521bc
 ```
 
 **junod version**
