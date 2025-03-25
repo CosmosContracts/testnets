@@ -71,7 +71,7 @@ else
     # this genesis time is different from original genesis time, just for validating gentx.
     sed -i '/genesis_time/c\   \"genesis_time\" : \"2021-09-02T16:00:00Z\",' $JUNOD_HOME/config/genesis.json
 
-    find ../$CHAIN_ID/gentx -iname "*.json" -print0 |
+    find ../$CHAIN_ID/gentxs -iname "*.json" -print0 |
         while IFS= read -r -d '' line; do
             GENACC=$(cat $line | sed -n 's|.*"delegator_address":"\([^"]*\)".*|\1|p')
             denomquery=$(jq -r '.body.messages[0].value.denom' $line)
