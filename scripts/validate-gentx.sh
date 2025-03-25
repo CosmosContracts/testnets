@@ -4,21 +4,21 @@ set -x
 
 JUNOD_HOME="/tmp/junod$(date +%s)"
 RANDOM_KEY="randomjunodvalidatorkey"
-CHAIN_ID=uni-6
+CHAIN_ID=uni-7
 DENOM=ujunox
 VALIDATOR_COINS=10000000000$DENOM
 MAXBOND=9000000000
 GENTX_FILE=$(find ./$CHAIN_ID/gentx -iname "*.json")
 LEN_GENTX=$(echo ${#GENTX_FILE})
-JUNOD_TAG="v11.0.0"
+JUNOD_TAG="v27.0.0"
 
 # Gentx Start date
-start="2021-10-11 01:00:00Z"
+start="2025-03-24 15:00:00Z"
 # Compute the seconds since epoch for start date
 stTime=$(date --date="$start" +%s)
 
 # Gentx End date
-end="2023-02-03 17:00:00Z"
+end="2023-03-26 17:00:00Z"
 # Compute the seconds since epoch for end date
 endTime=$(date --date="$end" +%s)
 
@@ -63,9 +63,10 @@ else
 
     ./bin/junod init --chain-id $CHAIN_ID validator --home $JUNOD_HOME
 
-    echo "..........Fetching genesis......."
-    rm -rf $JUNOD_HOME/config/genesis.json
-    cp ../$CHAIN_ID/pre-genesis.json $JUNOD_HOME/config/genesis.json
+    echo "..........Modifying genesis......."
+    # rm -rf $JUNOD_HOME/config/genesis.json
+    # cp ../$CHAIN_ID/pre-genesis.json $JUNOD_HOME/config/genesis.json
+    sed -i 's/"stake"/"ujunox"/g' $JUNOD_HOME/config/genesis.json
 
     # this genesis time is different from original genesis time, just for validating gentx.
     sed -i '/genesis_time/c\   \"genesis_time\" : \"2021-09-02T16:00:00Z\",' $JUNOD_HOME/config/genesis.json
@@ -92,7 +93,7 @@ else
                 exit 1
             fi
 
-            ./bin/junod add-genesis-account $(jq -r '.body.messages[0].delegator_address' $line) $VALIDATOR_COINS --home $JUNOD_HOME
+            ./bin/junod genesis add-genesis-account $(jq -r '.body.messages[0].delegator_address' $line) $VALIDATOR_COINS --home $JUNOD_HOME
         done
 
     mkdir -p $JUNOD_HOME/config/gentx/
@@ -101,11 +102,11 @@ else
     cp -r ../$CHAIN_ID/gentx/* $JUNOD_HOME/config/gentx/
 
     echo "..........Collecting gentxs......."
-    ./bin/junod collect-gentxs --home $JUNOD_HOME &> log.txt
+    ./bin/junod genesis collect-gentxs --home $JUNOD_HOME &> log.txt
     sed -i '/persistent_peers =/c\persistent_peers = ""' $JUNOD_HOME/config/config.toml
     sed -i '/minimum-gas-prices =/c\minimum-gas-prices = "0.25ujunox"' $JUNOD_HOME/config/app.toml
 
-    ./bin/junod validate-genesis --home $JUNOD_HOME
+    ./bin/junod genesis validate-genesis --home $JUNOD_HOME
 
     echo "..........Starting node......."
     ./bin/junod start --home $JUNOD_HOME &
