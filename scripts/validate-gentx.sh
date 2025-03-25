@@ -8,7 +8,7 @@ CHAIN_ID=uni-7
 DENOM=ujunox
 VALIDATOR_COINS=10000000000$DENOM
 MAXBOND=9000000000
-GENTX_FILE=$(find ./$CHAIN_ID/gentx -iname "*.json")
+GENTX_FILE=$(find ./$CHAIN_ID/gentxs -iname "*.json")
 LEN_GENTX=$(echo ${#GENTX_FILE})
 JUNOD_TAG="v27.0.0"
 
@@ -18,7 +18,7 @@ start="2025-03-24 15:00:00Z"
 stTime=$(date --date="$start" +%s)
 
 # Gentx End date
-end="2023-03-26 17:00:00Z"
+end="2025-03-26 17:00:00Z"
 # Compute the seconds since epoch for end date
 endTime=$(date --date="$end" +%s)
 
@@ -71,7 +71,7 @@ else
     # this genesis time is different from original genesis time, just for validating gentx.
     sed -i '/genesis_time/c\   \"genesis_time\" : \"2021-09-02T16:00:00Z\",' $JUNOD_HOME/config/genesis.json
 
-    find ../$CHAIN_ID/gentx -iname "*.json" -print0 |
+    find ../$CHAIN_ID/gentxs -iname "*.json" -print0 |
         while IFS= read -r -d '' line; do
             GENACC=$(cat $line | sed -n 's|.*"delegator_address":"\([^"]*\)".*|\1|p')
             denomquery=$(jq -r '.body.messages[0].value.denom' $line)
@@ -99,11 +99,10 @@ else
     mkdir -p $JUNOD_HOME/config/gentx/
 
     # add submitted gentxs
-    cp -r ../$CHAIN_ID/gentx/* $JUNOD_HOME/config/gentx/
+    cp -r ../$CHAIN_ID/gentxs/* $JUNOD_HOME/config/gentx/
 
     echo "..........Collecting gentxs......."
     ./bin/junod genesis collect-gentxs --home $JUNOD_HOME &> log.txt
-    sed -i '/persistent_peers =/c\persistent_peers = ""' $JUNOD_HOME/config/config.toml
     sed -i '/minimum-gas-prices =/c\minimum-gas-prices = "0.25ujunox"' $JUNOD_HOME/config/app.toml
 
     ./bin/junod genesis validate-genesis --home $JUNOD_HOME
